@@ -9,8 +9,7 @@ and open the template in the editor.
 */
 
 body {
-    background: url("../media/background.jpg") center no-repeat;
-    background-size: cover;
+    width: 100%;
 }
 
 header {
@@ -26,8 +25,17 @@ header h3 {
 }
 
 header #logo {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
+}
+
+header .navigation {
+    margin-top: 15px;
+}
+
+section.short_info {
+    background: url("../media/background.jpg") center no-repeat;
+    background-size: cover;
 }
 
 section.short_info p {
