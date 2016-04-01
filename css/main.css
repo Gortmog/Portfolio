@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 26, 2016, 11:20:59 PM
+    Author     : NerZhul
+*/
+
+body {
+    background: url("../media/background.jpg") center no-repeat;
+    background-size: cover;
+}
+
+header {
+    width: 100%;
+    background-color: #555;
+    position: fixed;
+    z-index: 10;
+}
+
+header #logo,
+header h3 {
+    display: inline-block;
+}
+
+header #logo {
+    width: 75px;
+    height: 75px;
+}
+
+section.short_info p {
+    margin-top: 100px;
+}
+
+section.short_info .btn {
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    header .navigation {
+        float: right;
+    }
+}
+
+@media (max-width: 767px) {
+    
+    header {
+        position: static;
+    }
+    
+    header .info {
+        text-align: center;
+    }
+    header .nav-pills {
+        display: flex;
+        justify-content: center;
+    }
+    header .nav-pills > li {
+        float: none;
+    }
+    section.short_info p {
+        margin-top: 20px;
+    }
+}    
+
+@media (max-width: 480px) {    
+    header .nav-pills {
+        display: inline-block;
+        width: 100%;
+    }
+    
+    header .nav-pills > li {
+        text-align: center;
+    }
+}
