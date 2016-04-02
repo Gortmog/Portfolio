@@ -46,6 +46,14 @@ section.short_info .btn {
     margin-bottom: 30px;
 }
 
+section.projects .col-sm-6 {
+    text-align: center;
+}
+
+section.projects img {
+    display: inline-block;
+}
+
 @media (min-width: 768px) {
     header .navigation {
         float: right;
