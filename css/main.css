@@ -56,10 +56,21 @@ header .navigation {
     margin-top: 15px;
 }
 
+header .nav-pills li a {
+    background-color: #222; 
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+}
+
+header .nav-pills li a:hover {
+    color: #000;
+}
+
 section.short_info {
     background: url("../media/background.jpg") center no-repeat;
     background-size: cover;
-    font-family: sans-serif;
+    font-family: CopperplateLight, sans-serif;
 }
 
 section.short_info .text {
@@ -100,7 +111,7 @@ footer img {
 
 footer ul {
     list-style-type: none;
-    margin-top: 8px;
+    margin: 8px 0;
     padding-left: 0;
 }
 
@@ -134,6 +145,10 @@ footer .copyright {
         text-align: center;
     }
     
+    header .navigation {
+        margin-bottom: 15px;
+    }
+
     header .nav-pills {
         display: flex;
         justify-content: center;
@@ -152,13 +167,27 @@ footer .copyright {
     } 
 }    
 
-@media (max-width: 480px) {    
+@media (max-width: 480px) {  
+    
+    header .container,
+    header .navigation,
     header .nav-pills {
-        display: inline-block;
         width: 100%;
     }
+        
+    header .col-sm-6,
+    header .navigation,
+    header .nav-pills li {
+        margin: 0;
+        padding: 0;
+    }
     
-    header .nav-pills > li {
+    header .nav-pills {
+        display: inline-block;
+    }
+    
+    header .nav-pills > li a {
         text-align: center;
+        border-radius: 0;
     }
 }
