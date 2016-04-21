@@ -8,3 +8,18 @@ and open the template in the editor.
     Author     : NerZhul
 */
 
+section.family .row {
+    margin-top: 100px;
+}
+
+section .mask {
+    overflow: hidden;
+}
+
+section .photos {
+    width: 4500px;
+}
+
+section .photos img {
+    height: 500px;
+}

@@ -29,6 +29,10 @@ body {
     width: 100%;
 }
 
+/*
+    HEADER
+*/
+
 header {
     width: 100%;
     background-color: #555;
@@ -66,6 +70,10 @@ header .nav-pills li a:hover {
     color: #000;
 }
 
+/*
+    SECTION.SHORT_INFO
+*/
+
 section.short_info {
     background: url("../media/background.jpg") center no-repeat;
     background-size: cover;
@@ -88,6 +96,10 @@ section.short_info .btn {
     font-weight: bold;
 }
 
+/*
+    SECTION.SHORT_INFO
+*/
+
 section.projects .col-sm-6 {
     text-align: center;
 }
@@ -95,6 +107,10 @@ section.projects .col-sm-6 {
 section.projects img {
     display: inline-block;
 }
+
+/*
+    FOOTER
+*/
 
 footer {
     width: 100%;
