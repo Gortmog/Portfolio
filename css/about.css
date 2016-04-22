@@ -19,25 +19,28 @@ section p {
 }
 
 section .mask {
-    overflow: hidden;
     padding: 30px 0;
-}
-
-section .photos {
-    width: 4500px;
-}
-
-section img {
-    height: 400px;
 }
 
 section.family {
     padding-top: 100px;
 }
 
+section.family .mask {
+    overflow: hidden;
+}
+
+section.family .photos {
+    width: 4500px;
+}
+
 section.family .photos:hover {
     animation-play-state: paused;
 }   
+
+section.family .photos img {
+    height: 400px;
+}
 
 section.family .photos img {
     transition: all 0.7s ease;
@@ -53,7 +56,23 @@ section.family img:first-child {
     animation-play-state: inherit;
 }
 
-    
+section.ozzy .small-screen {
+    display: none;
+}
+
+section.ozzy .photos {
+    text-align: center;
+}
+
+section.ozzy .photos img {
+    display: none;
+    width: 330px;
+}
+
+section.ozzy .photos .active {
+    display: inline;
+}
+
 @keyframes carousel {
     
     0% {
@@ -74,5 +93,12 @@ section.family img:first-child {
         padding-top: 20px;
     }
     
+    section.ozzy .large-screen {
+        display: none;
+    }
+    
+    section.ozzy .small-screen {
+        display: block;
+    }
     
 }
