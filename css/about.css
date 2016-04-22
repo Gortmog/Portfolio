@@ -8,18 +8,71 @@ and open the template in the editor.
     Author     : NerZhul
 */
 
-section.family .row {
-    margin-top: 100px;
+section h3 {
+    font-family: Copperplate, sans-serif;
+}
+
+section p {
+    font-family: CopperplateLight, sans-serif;
+    font-size: 18px;
+    text-indent: 30px;
 }
 
 section .mask {
     overflow: hidden;
+    padding: 30px 0;
 }
 
 section .photos {
     width: 4500px;
 }
 
-section .photos img {
-    height: 500px;
+section img {
+    height: 400px;
+}
+
+section.family {
+    padding-top: 100px;
+}
+
+section.family .photos:hover {
+    animation-play-state: paused;
+}   
+
+section.family .photos img {
+    transition: all 0.7s ease;
+}
+
+section.family .photos img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 3px 3px #aaa;
+} 
+
+section.family img:first-child {
+    animation: carousel 60s linear infinite;
+    animation-play-state: inherit;
+}
+
+    
+@keyframes carousel {
+    
+    0% {
+        margin-left: 0px;
+    }
+    
+    100% {
+        margin-left: -3425px;
+    }
+    
+}
+
+
+
+@media (max-width: 767px) {
+    
+    section.family {
+        padding-top: 20px;
+    }
+    
+    
 }
