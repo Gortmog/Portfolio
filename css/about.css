@@ -35,10 +35,6 @@ section.family .photos {
     width: 4500px;
 }
 
-section.family .photos:hover {
-    animation-play-state: paused;
-}   
-
 section.family .photos img {
     height: 400px;
 }
@@ -46,11 +42,6 @@ section.family .photos img {
 section.family .photos img {
     transition: all 0.7s ease;
 }
-
-section.family .photos img:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 3px 3px #aaa;
-} 
 
 section.family img:first-child {
     animation: carousel 60s linear infinite;
@@ -127,7 +118,7 @@ section.bike .video h3 {
     }
     
     100% {
-        margin-left: -3425px;
+        margin-left: -2575px;
     }
     
 }
@@ -150,10 +141,39 @@ section.bike .video h3 {
     
 }
 
+@media (min-width: 768px) {
+    
+    section.family .photos img:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 3px 3px #aaa;
+    } 
+    
+    section.family .photos:hover {
+        animation-play-state: paused;
+    } 
+
+    @keyframes carousel {
+
+        0% {
+            margin-left: 0px;
+        }
+
+        100% {
+            margin-left: -3425px;
+        }
+
+    }
+    
+} 
+
 @media (max-width: 767px) {
     
     section.family {
         padding-top: 20px;
+    }
+    
+    section.family .photos img {
+        height: 300px;
     }
     
     section.ozzy .large-screen {
