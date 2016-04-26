@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : NerZhul
 */
 
-section h3 {
+section h3{
     font-family: Copperplate, sans-serif;
 }
 
@@ -19,7 +19,7 @@ section p {
 }
 
 section .mask {
-    padding: 30px 0;
+    margin: 0;
 }
 
 section.family {
@@ -28,6 +28,7 @@ section.family {
 
 section.family .mask {
     overflow: hidden;
+    padding: 30px 0;
 }
 
 section.family .photos {
@@ -56,8 +57,32 @@ section.family img:first-child {
     animation-play-state: inherit;
 }
 
+section.ozzy {
+    margin: 30px 0; 
+}
+
 section.ozzy .small-screen {
     display: none;
+}
+
+section.ozzy .prev-button {
+    position: absolute;
+    top: 175px;
+    left: 15px;
+}
+
+section.ozzy .next-button {
+    position: absolute;
+    top: 175px;
+    right: 15px;
+}
+
+section.ozzy .btn {
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.5); 
 }
 
 section.ozzy .photos {
@@ -66,11 +91,33 @@ section.ozzy .photos {
 
 section.ozzy .photos img {
     display: none;
-    width: 330px;
+    height: 400px;
 }
 
 section.ozzy .photos .active {
     display: inline;
+}
+
+section.bike {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+section.bike .image {
+    text-align: center;
+}
+
+section.bike .image img {
+    margin-top: 20px;
+}
+    
+section.bike iframe {
+    height: 400px;
+    width: 550px;
+}
+
+section.bike .video h3 {
+    font-size: 20px
 }
 
 @keyframes carousel {
@@ -85,7 +132,23 @@ section.ozzy .photos .active {
     
 }
 
+@media (max-width: 1199px) {
+    
+    section.bike iframe {
+        height: 350px;
+        width: 450px;
+    }
+    
+}
 
+@media (max-width: 991px) {
+    
+    section.bike iframe {
+        height: 260px;
+        width: 330px;
+    }
+    
+}
 
 @media (max-width: 767px) {
     
@@ -99,6 +162,30 @@ section.ozzy .photos .active {
     
     section.ozzy .small-screen {
         display: block;
+    }
+    
+    section.bike .image img {
+        display: none;
+    }
+    
+    section.bike .video {
+        text-align: center;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    
+    section.ozzy .photos img {
+        height: 330px;
+    }
+    
+    section.ozzy .prev-button {
+        top: 140px;
+    }
+
+    section.ozzy .next-button {
+        top: 140px;
     }
     
 }
