@@ -43,6 +43,10 @@ section.family .photos img {
     transition: all 0.7s ease;
 }
 
+.ozzy img {
+    transition: opacity 1s;
+}
+
 section.family img:first-child {
     animation: carousel 60s linear infinite;
     animation-play-state: inherit;
