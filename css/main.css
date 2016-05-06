@@ -37,28 +37,54 @@ body {
 
 header {
     width: 100%;
-    background-color: #555;
+    background-color: #666;
     position: fixed;
     z-index: 10;
     font-family: Copperplate, sans-serif;
 }
 
 header #logo,
-header h3 {
+header h3,
+header .nav-icon {
     display: inline-block;
 }
 
+header .info {
+}
+
 header #logo {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
 }
 
 header h3 {
     font-weight: bold;
+    margin: 13px;
+}
+
+header .nav-icon {
+    margin: 10px;
+    padding: 5px 6px 1px 6px;
+    background-color: rgba(85,85,85,0);
+    border: 1px solid #666;
+    border-radius: 3px;
+}
+
+header .nav-click {
+    border: 1px solid #444;
+    background-color: #555555;
+}
+
+header span {
+    font-size: 18px;
 }
 
 header .navigation {
-    margin-top: 15px;
+    margin-top: 6px;
+}
+
+header .nav-active {
+    display: inline;
 }
 
 header .nav-pills li a {
@@ -114,7 +140,7 @@ section.projects img {
 
 footer {
     width: 100%;
-    background-color: #555;
+    background-color: #666;
     color: white;
     font-family: Copperplate, sans-serif;
 }
@@ -140,6 +166,10 @@ footer p {
     display: inline-block;
 }
 
+footer p {
+    color: #fff;
+}
+
 footer .copyright {
     margin-top: 15px;
 }
@@ -147,6 +177,11 @@ footer .copyright {
 @media (min-width: 768px) {
     header .navigation {
         float: right;
+        display: inline;
+    }
+    
+    header .nav-icon {
+        display: none;
     }
 }
 
@@ -155,15 +190,12 @@ footer .copyright {
     header {
         position: static;
     }
-    
-    header .info {
-        text-align: center;
-    }
-    
+        
     header .navigation {
-        margin-bottom: 15px;
+        margin-bottom: 5px;
+        display: none;
     }
-
+    
     header .nav-pills {
         display: flex;
         justify-content: center;
@@ -176,10 +208,11 @@ footer .copyright {
     section.short_info .text {
         margin-top: 20px;
     }
+     
+    footer ul p {
+        display: none;
+    }
     
-    footer li {
-        display: block;
-    } 
 }    
 
 @media (max-width: 480px) {  
