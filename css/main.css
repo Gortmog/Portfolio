@@ -32,6 +32,19 @@ body {
 }
 
 /*
+    VIEWPORT_ANIMATION
+*/
+
+.animated-to-viewport {
+    opacity: 0;
+}
+
+.in-viewport {
+    transition: all 2s;
+    opacity: 1;
+}
+
+/*
     HEADER
 */
 
@@ -39,8 +52,10 @@ header {
     width: 100%;
     background-color: #666;
     position: fixed;
+    top: 0;
     z-index: 10;
     font-family: Copperplate, sans-serif;
+    padding: 5px 0;
 }
 
 header #logo,
@@ -68,6 +83,11 @@ header .nav-icon {
     background-color: rgba(85,85,85,0);
     border: 1px solid #666;
     border-radius: 3px;
+}
+
+header .nav-icon:hover {
+    cursor: pointer;
+    border: 1px solid #444;
 }
 
 header .nav-click {
@@ -106,8 +126,18 @@ section.short_info {
     font-family: CopperplateLight, sans-serif;
 }
 
+section.short_info .my_img {
+    text-align: center;
+    margin-top: 80px;
+}
+
+section.short_info img {
+    display: inline-block;
+    border-radius: 20px;
+}
+
 section.short_info .text {
-    margin-top: 100px;
+    margin-top: 90px;
     font-size: 18px;
 }
 
@@ -189,6 +219,7 @@ footer .copyright {
     
     header {
         position: static;
+        padding: 0;
     }
         
     header .navigation {
@@ -205,8 +236,9 @@ footer .copyright {
         float: none;
     }
     
-    section.short_info .text {
-        margin-top: 20px;
+    section.short_info .text,
+    section.short_info .my_img {
+        margin-top: 30px;
     }
      
     footer ul p {

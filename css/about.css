@@ -8,6 +8,14 @@ and open the template in the editor.
     Author     : NerZhul
 */
 
+/*
+    GENERAL
+*/
+
+section {
+    margin: 50px auto;
+}
+
 section h3{
     font-family: Copperplate, sans-serif;
 }
@@ -22,13 +30,17 @@ section .mask {
     margin: 0;
 }
 
+/*
+    SECTION.FAMILY
+*/
+
 section.family {
-    padding-top: 100px;
+    padding-top: 90px;
 }
 
 section.family .mask {
     overflow: hidden;
-    padding: 30px 0;
+    padding: 25px 0;
 }
 
 section.family .photos {
@@ -37,14 +49,7 @@ section.family .photos {
 
 section.family .photos img {
     height: 400px;
-}
-
-section.family .photos img {
     transition: all 0.7s ease;
-}
-
-.ozzy img {
-    transition: opacity 1s;
 }
 
 section.family img:first-child {
@@ -52,24 +57,30 @@ section.family img:first-child {
     animation-play-state: inherit;
 }
 
-section.ozzy {
-    margin: 30px 0; 
+/*
+    SECTION.OZZY
+*/
+
+section.ozzy .mask {
+    position: relative;
+    overflow: hidden;
+    padding: 25px 0;
+    z-index: 5;
 }
 
-section.ozzy .small-screen {
-    display: none;
+section.ozzy .prev-button,
+section.ozzy .next-button {
+    z-index: 9;
+    position: absolute;
+    top: 190px;
 }
 
 section.ozzy .prev-button {
-    position: absolute;
-    top: 175px;
-    left: 15px;
+    left: 0px;
 }
 
 section.ozzy .next-button {
-    position: absolute;
-    top: 175px;
-    right: 15px;
+    right: 0px;
 }
 
 section.ozzy .btn {
@@ -85,18 +96,13 @@ section.ozzy .photos {
 }
 
 section.ozzy .photos img {
-    display: none;
     height: 400px;
+    transition: opacity 1s;
 }
 
-section.ozzy .photos .active {
-    display: inline;
-}
-
-section.bike {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
+/*
+    SECTION.BIKE
+*/
 
 section.bike .image {
     text-align: center;
@@ -113,6 +119,14 @@ section.bike iframe {
 
 section.bike .video h3 {
     font-size: 20px
+}
+
+section.bike .animated-to-viewport {
+    transform: translate(500px,0);
+}
+
+section.bike .in-viewport {
+    transform: translate(0,0);
 }
 
 @keyframes carousel {
@@ -178,18 +192,10 @@ section.bike .video h3 {
     
     section.family .photos img {
         height: 300px;
-    }
-    
-    section.ozzy .large-screen {
-        display: none;
-    }
-    
-    section.ozzy .small-screen {
-        display: block;
-    }
-    
+    }   
+ 
     section.bike .image img {
-        display: none;
+        margin: 0 auto;
     }
     
     section.bike .video {
