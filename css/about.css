@@ -72,7 +72,7 @@ section.ozzy .prev-button,
 section.ozzy .next-button {
     z-index: 9;
     position: absolute;
-    top: 190px;
+    top: 200px;
 }
 
 section.ozzy .prev-button {
@@ -93,16 +93,31 @@ section.ozzy .btn {
 
 section.ozzy .photos {
     text-align: center;
+    position: relative;
 }
 
-section.ozzy .photos img {
+section.ozzy .photos #img_main {
     height: 400px;
+    position: relative;
     transition: opacity 1s;
 }
+
+section.ozzy .photos #img_over {
+    position: absolute;
+    height: 800px;
+    top: 0px;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s;
+} 
 
 /*
     SECTION.BIKE
 */
+
+section.bike {
+    overflow: hidden;
+}
 
 section.bike .image {
     text-align: center;
@@ -206,16 +221,13 @@ section.bike .in-viewport {
 
 @media (max-width: 480px) {
     
-    section.ozzy .photos img {
+    section.ozzy .photos #img_main {
         height: 330px;
     }
     
-    section.ozzy .prev-button {
-        top: 140px;
+    section.ozzy .prev-button,
+    section.ozzy .next-button {
+        top: 165px;
     }
 
-    section.ozzy .next-button {
-        top: 140px;
-    }
-    
 }
