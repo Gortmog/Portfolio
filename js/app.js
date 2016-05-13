@@ -101,7 +101,7 @@ var main = function () {
     
     function HideImg(){
         $(".ozzy img").css("opacity", "0");
-        var timed_change = setTimeout(ChangeAndShowImg, 700);
+        setTimeout(ChangeAndShowImg, 700);
     };
     
     function ChangeAndShowImg(){
@@ -113,27 +113,13 @@ var main = function () {
     //  OZZY_ZOOM
     //
     
-    var initial_height = parseInt($(".ozzy img").css("height"));
-    var total_resize = 1;
-    
-    $(".ozzy img").bind("mousewheel DOMMouseScroll", OzzyZoomScroll);
-    
-    function OzzyZoomScroll(event){
-        var delta = ((event.originalEvent.wheelDelta  / 120) || -(event.detail / 3));
-        var image_change = initial_height + (20 * delta);
-        var resize_factor = image_change / initial_height - 1;
-        total_resize = total_resize + resize_factor ;
-        total_resize = Math.max(1, (Math.min(2, total_resize)));
-        $(".ozzy img").css("transform", "scale(" + total_resize + ")");
-        event.preventDefault();
-    };
-    
     $(".ozzy .photos").on("mouseenter", OzzyZoomMouseenter);
     
     function OzzyZoomMouseenter(){
         $(".ozzy #img_over").css("opacity", "1");
         $(".ozzy #img_main").css("opacity", "0");
         $(".ozzy .photos").on("mousemove", OzzyZoomMousemove);
+        $(".ozzy img").bind("mousewheel DOMMouseScroll", OzzyZoomScroll);
     };
     
     $(".ozzy .photos").on("mouseleave", OzzyZoomMouseleave);
@@ -144,8 +130,9 @@ var main = function () {
         $(".ozzy #img_over").css("opacity", "0");
         $(".ozzy #img_main").css("opacity", "1");
         $(".ozzy .photos").off("mousemove");
+        $(".ozzy img").unbind("mousewheel DOMMouseScroll", OzzyZoomScroll);
     };
-    
+
     function OzzyZoomMousemove(event){
         var ozzy_img_left = $(".ozzy #img_main").offset().left;
         var ozzy_img_top = $(".ozzy #img_main").offset().top;
@@ -159,7 +146,20 @@ var main = function () {
         $(".ozzy #img_over").css("left", ozzy_over_left + "px");
         $(".ozzy #img_over").css("top", ozzy_over_top + "px");        
     };
-        
+ 
+    var initial_height = parseInt($(".ozzy img").css("height"));
+    var total_resize = 1;
+    
+    function OzzyZoomScroll(event){
+        var delta = ((event.originalEvent.wheelDelta  / 120) || -(event.detail / 3));
+        var image_change = initial_height + (20 * delta);
+        var resize_factor = image_change / initial_height - 1;
+        total_resize = total_resize + resize_factor ;
+        total_resize = Math.max(1, (Math.min(2, total_resize)));
+        $(".ozzy img").css("transform", "scale(" + total_resize + ")");
+        event.preventDefault();
+    };    
+    
     //
     //  IN_VIEWPORT_CHECK
     //   

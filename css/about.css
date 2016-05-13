@@ -200,6 +200,10 @@ section.bike .in-viewport {
 } 
 
 @media (max-width: 767px) {
+
+    section {
+        margin: 0 auto;
+    }    
     
     section.family {
         padding-top: 20px;
