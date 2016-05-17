@@ -52,9 +52,68 @@ section.family .photos img {
     transition: all 0.7s ease;
 }
 
+section.family .photos img:hover {
+    cursor: pointer;
+} 
+
 section.family img:first-child {
     animation: carousel 60s linear infinite;
     animation-play-state: inherit;
+}
+
+/*
+    SECTION.FAMILY.MODAL
+*/
+
+#familyModal .modal-dialog {
+    width: 767px;
+}
+
+#familyModal .modal-image {
+    position: relative;
+}
+
+#familyModal img {
+    width: 100%;
+    transition: opacity 1s;
+}
+
+#familyModal span {
+    font-size: 35px;
+    color: #fff;
+}
+
+#familyModal .prev-button-modal,
+#familyModal .next-button-modal {
+    z-index: 9;
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 50%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#familyModal .prev-button-modal {
+    left: 0px;
+}
+
+#familyModal .next-button-modal {
+    right: 0px;
+}
+
+#familyModal .modal-arrow-left,
+#familyModal .modal-arrow-right {
+    position: absolute;
+    top: 47%;
+}
+
+#familyModal .modal-arrow-left {
+    left: 5px;
+}
+
+#familyModal .modal-arrow-right {
+    right: 5px;
 }
 
 /*
@@ -72,7 +131,7 @@ section.ozzy .prev-button,
 section.ozzy .next-button {
     z-index: 9;
     position: absolute;
-    top: 200px;
+    top: 43%;
 }
 
 section.ozzy .prev-button {
@@ -184,7 +243,14 @@ section.bike .in-viewport {
     section.family .photos:hover {
         animation-play-state: paused;
     } 
-
+    
+    
+    #familyModal .prev-button-modal:hover,
+    #familyModal .next-button-modal:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+    
     @keyframes carousel {
 
         0% {
@@ -213,6 +279,15 @@ section.bike .in-viewport {
         height: 300px;
     }   
  
+    #familyModal .modal-dialog {
+        width: 97%;
+    }
+
+    #familyModal .prev-button-modal,
+    #familyModal .next-button-modal {
+        opacity: 1;
+    }
+        
     section.bike .image img {
         margin: 0 auto;
     }
@@ -227,11 +302,6 @@ section.bike .in-viewport {
     
     section.ozzy .photos #img_main {
         height: 330px;
-    }
-    
-    section.ozzy .prev-button,
-    section.ozzy .next-button {
-        top: 165px;
     }
 
 }

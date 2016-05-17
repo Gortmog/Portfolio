@@ -190,9 +190,47 @@ var main = function () {
 
 
     //
-    //  BIKE_IN
+    //  FAMILY_MODAL
     // 
 
+    $(".family img").click(FamilyModalShow);
+    
+    var current_family_img = 1;
+    var total_family_img = 6;
+    
+    function FamilyModalShow(){
+        $("#familyModal").modal();
+        var source = $(this).attr("src");
+        $("#familyModal img").attr("src", source);
+        current_family_img = source.substr(16, 1);
+    };
+    
+    $(".next-button-modal").click(function () {
+        current_family_img++;
+        if (current_family_img > total_family_img) {
+            current_family_img = 1;
+        }
+        HideImgModal();
+    });
+        
+    $(".prev-button-modal").click(function () {
+        current_family_img--;
+        if (current_family_img < 1) {
+            current_family_img = total_family_img;
+        }
+        HideImgModal();
+    });
+    
+    function HideImgModal(){
+        $("#familyModal img").css("opacity", "0");
+        setTimeout(ChangeAndShowImgModal, 500);
+    };
+    
+    function ChangeAndShowImgModal(){
+        $("#familyModal img").attr("src", "../media/family_" + current_family_img + ".jpg");
+        $("#familyModal img").css("opacity", "1");
+    };
+    
 };
 
 
