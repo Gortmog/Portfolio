@@ -10,7 +10,7 @@
  * - click-change for Ozzy images   DONE
  * - zoom for Ozzy images;  DONE
  * - drop-down menu button;   DONE
- * - modal window for bike;
+ * - modal window for family;   DONE
  * 
  */
 
@@ -197,12 +197,33 @@ var main = function () {
     
     var current_family_img = 1;
     var total_family_img = 6;
+    var family_data;
+    var family_place;
+    var family_img;
+    var family_gps;
+    var family_gps_link;
+    
+    $.getJSON("../data/family.json", function(data){
+        family_data = data;
+    });
     
     function FamilyModalShow(){
-        $("#familyModal").modal();
         var source = $(this).attr("src");
         $("#familyModal img").attr("src", source);
         current_family_img = source.substr(16, 1);
+        SetFamilyModalData();
+        $("#familyModal").modal();
+    };
+    
+    function SetFamilyModalData(){
+        family_place = family_data.data[current_family_img-1].place;
+        family_img = family_data.data[current_family_img-1].img;
+        family_gps = family_data.data[current_family_img-1].geo;
+        family_gps_link = family_data.data[current_family_img-1].geo_url;
+        $("#familyModal h4").html(family_place);
+        $("#familyModal img").attr("src", family_img);
+        $("#familyModal a").html(family_gps);
+        $("#familyModal a").attr("href", family_gps_link);
     };
     
     $(".next-button-modal").click(function () {
@@ -222,12 +243,16 @@ var main = function () {
     });
     
     function HideImgModal(){
+        $("#familyModal h4").css("opacity", "0");
+        $("#familyModal a").css("opacity", "0");
         $("#familyModal img").css("opacity", "0");
         setTimeout(ChangeAndShowImgModal, 500);
     };
     
     function ChangeAndShowImgModal(){
-        $("#familyModal img").attr("src", "../media/family_" + current_family_img + ".jpg");
+        SetFamilyModalData();
+        $("#familyModal h4").css("opacity", "1");
+        $("#familyModal a").css("opacity", "1");
         $("#familyModal img").css("opacity", "1");
     };
     

@@ -1,0 +1,40 @@
+{
+    "data":[
+        {
+            "place": "Amsterdam, first day of our honeymoon",
+            "img": "../media/family_1_hd.jpg",
+            "geo": "Amsterdam, 52°22'52.1\"N 4°54'03.8\"E",
+            "geo_url": "https://www.google.com.ua/maps/@52.3803819,4.8992023,3a,75y,23.38h,86.97t/data=!3m6!1e1!3m4!1s8AqRK2vTD64QTOJQIvBr4g!2e0!7i13312!8i6656?hl=en"
+        },
+        {
+            "place": "Tenerife, Teide national park",
+            "img": "../media/family_2_hd.jpg",
+            "geo": "Tenerife, 28°18'22.2\"N 16°33'51.3\"W",
+            "geo_url": "https://www.google.com.ua/maps/@28.3062032,-16.5643355,3a,75y,3.64h,79.07t/data=!3m6!1e1!3m4!1syN1lT_0wiEaZxY-2kyJaQg!2e0!7i13312!8i6656?hl=en"
+        },
+        {
+            "place": "Tenerife, mountain pass on the western coast",
+            "img": "../media/family_3_hd.jpg",
+            "geo": "Tenerife, 28°18'47.6\"N 16°48'21.3\"W",
+            "geo_url": "https://www.google.com.ua/maps/@28.313271,-16.8059473,3a,60y,129.59h,83.61t/data=!3m6!1e1!3m4!1sAyWxrR5suc7hJEHOfzo_JQ!2e0!7i13312!8i6656?hl=en"
+        },
+        {
+            "place": "Tenerife, Basilica de Nuestra Senora de Candelaria",
+            "img": "../media/family_4_hd.jpg",
+            "geo": "Tenerife, 28°21'06.8\"N 16°22'12.1\"W",
+            "geo_url": "https://www.google.com.ua/maps/@28.3520922,-16.3702412,3a,75y,151.62h,80.55t/data=!3m6!1e1!3m4!1sI05ZxoI-GG5u38elz1nPSQ!2e0!7i13312!8i6656?hl=en"
+        },
+        {
+            "place": "Tenerife, Candelaria",
+            "img": "../media/family_5_hd.jpg",
+            "geo": "Tenerife, 28°20'59.1\"N 16°22'08.3\"W",
+            "geo_url": "https://www.google.com.ua/maps/@28.3499663,-16.3690326,3a,75y,126.55h,82.44t/data=!3m6!1e1!3m4!1sXzA4kfvowV0K5By09QTxRA!2e0!7i13312!8i6656?hl=en"
+        },
+        {
+            "place": "Kyiv, M.M.Gryshko National Botanical Garden",
+            "img": "../media/family_6_hd.jpg",
+            "geo": "Kyiv, 50°24'52.5\"N 30°33'49.0\"E",
+            "geo_url": "https://www.google.com.ua/maps/@50.4152947,30.556491,3a,75y,119.18h,87.72t/data=!3m6!1e1!3m4!1shVG2XWRLmOh03_-ANZ9YhA!2e0!7i13312!8i6656?hl=en"
+        }
+    ]
+}

@@ -16,7 +16,7 @@ section {
     margin: 50px auto;
 }
 
-section h3{
+section h3 {
     font-family: Copperplate, sans-serif;
 }
 
@@ -65,12 +65,24 @@ section.family img:first-child {
     SECTION.FAMILY.MODAL
 */
 
+#familyModal h4 {
+    font-family: CopperplateLight, sans-serif;
+    font-size: 22px;
+    transition: opacity 1s;
+}
+
+#familyModal a {
+    font-family: CopperplateLight, sans-serif;
+    transition: opacity 1s;
+}
+
 #familyModal .modal-dialog {
-    width: 767px;
+    width: 950px;
 }
 
 #familyModal .modal-image {
     position: relative;
+    margin-bottom: 10px;
 }
 
 #familyModal img {
@@ -225,6 +237,10 @@ section.bike .in-viewport {
 }
 
 @media (max-width: 991px) {
+ 
+    #familyModal .modal-dialog {
+        width: 95%;
+    }
     
     section.bike iframe {
         height: 260px;
@@ -272,16 +288,12 @@ section.bike .in-viewport {
     }    
     
     section.family {
-        padding-top: 20px;
+        padding-top: 80px;
     }
     
     section.family .photos img {
         height: 300px;
     }   
- 
-    #familyModal .modal-dialog {
-        width: 97%;
-    }
 
     #familyModal .prev-button-modal,
     #familyModal .next-button-modal {
@@ -299,6 +311,10 @@ section.bike .in-viewport {
 }
 
 @media (max-width: 480px) {
+    
+    #familyModal h4 {
+        font-size: 18px;
+    }
     
     section.ozzy .photos #img_main {
         height: 330px;

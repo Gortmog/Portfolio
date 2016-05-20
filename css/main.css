@@ -216,12 +216,7 @@ footer .copyright {
 }
 
 @media (max-width: 767px) {
-    
-    header {
-        position: static;
-        padding: 0;
-    }
-        
+  
     header .navigation {
         margin-bottom: 5px;
         display: none;
@@ -234,11 +229,6 @@ footer .copyright {
     
     header .nav-pills > li {
         float: none;
-    }
-    
-    section.short_info .text,
-    section.short_info .my_img {
-        margin-top: 30px;
     }
      
     footer ul p {
