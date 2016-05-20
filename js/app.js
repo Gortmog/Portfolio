@@ -24,6 +24,8 @@ var main = function () {
     $(window).resize(CheckOnResize);
     $(window).scroll(CheckOnScroll); 
     
+    var header_height = $("header").outerHeight() - 4;
+    
     function CheckOnResize(){
         SmallScreenCheck();
         SizeCheck();       
@@ -31,6 +33,7 @@ var main = function () {
     
     function CheckOnScroll(){
         ViewportCheck();
+        BackToTopCheck();
     };
    
     //
@@ -53,26 +56,34 @@ var main = function () {
     //  NAVIGATION_CLICK
     //
     
-    var tap = 0;
+    var nav_tap = 0;
     
     $("header .nav-icon").click(function () {
         $("header .nav-icon").toggleClass("nav-click");
-        if (tap === 0) {
+        if (nav_tap === 0) {
             $("header .navigation").css("display", "inline");
-            tap = 1;
+            var header_height_diff = $("header").outerHeight() - 4 - header_height;
+            console.log(header_height_diff);
+            $(".back-to-top").css("top", "" + header_height_diff + "px");
+            nav_tap = 1;
         } else {
             $("header .navigation").css("display", "none");
-            tap = 0;
-        }
+            $(".back-to-top").css("top", "0");
+            nav_tap = 0;
+        };
     });
     
     function SizeCheck(){
         if ($("header .nav-icon").css("display") === "none" ){
             $("header .navigation").css("display", "inline");
             $("header .nav-icon").removeClass("nav-click");
-            tap = 0;
-        } else if (tap === 0) {
+            $(".back-to-top").css("top", "0");
+            nav_tap = 0;
+        } else if (nav_tap === 0) {
             $("header .navigation").css("display", "none");
+        } else {
+            var header_height_diff = $("header").outerHeight() - 4 - header_height;
+            $(".back-to-top").css("top", "" + header_height_diff + "px");
         }
     };
     
@@ -188,7 +199,27 @@ var main = function () {
     //  BACK-TO-TOP
     //
 
+    
 
+
+
+    function BackToTopCheck(){
+        var window_scroll = $(window).scrollTop();
+        if (window_scroll > 50) {
+            //var header_height = $("header").outerHeight() - 4;
+            //console.log(a);
+            $(".back-to-top").css("transform", "translate(0 ," + header_height + "px)");
+        } else {
+            $(".back-to-top").css("transform", "translate(0 ,0)");
+        };
+    };
+
+    $(".back-to-top").on("click", BackToTopClick);
+    
+    function BackToTopClick(){
+        $("body").animate({scrollTop: 0});
+    };
+    
     //
     //  FAMILY_MODAL
     // 

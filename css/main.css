@@ -55,7 +55,6 @@ header {
     top: 0;
     z-index: 10;
     font-family: Copperplate, sans-serif;
-    padding: 5px 0;
 }
 
 header #logo,
@@ -92,7 +91,7 @@ header .nav-icon:hover {
 
 header .nav-click {
     border: 1px solid #444;
-    background-color: #555555;
+    background-color: #555;
 }
 
 header span {
@@ -116,6 +115,47 @@ header .nav-pills li a {
 
 header .nav-pills li a:hover {
     color: #000;
+}
+
+/*
+    BACK-TO-TOP
+*/
+
+.back-to-top {
+    position: fixed;
+    width: 130px;
+    top: 0px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 8;
+    font-family: Copperplate, sans-serif;
+    transition: transform 0.5s;
+    border: none;
+    outline: none;
+}
+
+
+.back-to-top button,
+.back-to-top button:focus {
+    width: 130px;
+    outline: none;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #666;
+    color: #fff;
+}
+
+.back-to-top button:hover {
+    border-color: #666;
+    background-color: #fff;
+    color: #000;
+}
+
+.back-to-top button:focus,
+.back-to-top button:active,
+.back-to-top button:focus:active {
+    outline: none;
 }
 
 /*
