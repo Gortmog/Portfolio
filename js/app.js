@@ -6,7 +6,7 @@
  * TO DO :
  * 
  * - clickable menu button for smaller viewport DONE
- * - "back to top" button;
+ * - "back to top" button;  DONE
  * - click-change for Ozzy images   DONE
  * - zoom for Ozzy images;  DONE
  * - drop-down menu button;   DONE
@@ -199,10 +199,6 @@ var main = function () {
     //  BACK-TO-TOP
     //
 
-    
-
-
-
     function BackToTopCheck(){
         var window_scroll = $(window).scrollTop();
         if (window_scroll > 50) {
@@ -240,11 +236,16 @@ var main = function () {
     
     function FamilyModalShow(){
         var source = $(this).attr("src");
-        $("#familyModal img").attr("src", source);
+        //$("#familyModal img").attr("src", source);
         current_family_img = source.substr(16, 1);
         SetFamilyModalData();
         $("#familyModal").modal();
+        $(window).on("keydown", GetKeyPressed);
     };
+    
+    $("#familyModal").on("hidden.bs.modal", function () {
+        $(window).off("keydown");
+    });
     
     function SetFamilyModalData(){
         family_place = family_data.data[current_family_img-1].place;
@@ -257,21 +258,38 @@ var main = function () {
         $("#familyModal a").attr("href", family_gps_link);
     };
     
-    $(".next-button-modal").click(function () {
+    function GetKeyPressed(event) {
+        switch (event.keyCode) {
+          case 37:  // left arrow key
+            PrevClickModal();
+            event.stopImmediatePropagation();
+            return;
+          case 39:  // right arrow key
+            NextClickModal();
+            event.stopImmediatePropagation();
+            return;
+        }
+    };    
+
+    $(".next-button-modal").on("click", NextClickModal);
+    
+    function NextClickModal() {
         current_family_img++;
         if (current_family_img > total_family_img) {
             current_family_img = 1;
         }
         HideImgModal();
-    });
+    };
         
-    $(".prev-button-modal").click(function () {
+    $(".prev-button-modal").on("click", PrevClickModal);
+            
+    function PrevClickModal() {
         current_family_img--;
         if (current_family_img < 1) {
             current_family_img = total_family_img;
         }
         HideImgModal();
-    });
+    };
     
     function HideImgModal(){
         $("#familyModal h4").css("opacity", "0");

@@ -65,6 +65,11 @@ section.family img:first-child {
     SECTION.FAMILY.MODAL
 */
 
+#familyModal.fade .modal-dialog {
+    transform: translate(0, 0);
+ }
+
+
 #familyModal h4 {
     font-family: CopperplateLight, sans-serif;
     font-size: 22px;
