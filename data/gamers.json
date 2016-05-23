@@ -1,0 +1,231 @@
+{
+    "heroes":[
+        {
+            "class_name": "Warrior",
+            "hp": "100",
+            "hit_mark": "5",
+            "specs":[
+                {
+                    "spec_name": "Axeman",
+                    "weapon": "axe",
+                    "damage": "1d12",
+                    "crit_mark": "16",
+                    "turn_frequency": "2"
+                },
+                {
+                    "spec_name": "Swordsman",
+                    "weapon": "sword",
+                    "damage": "1d8",
+                    "crit_mark": "18",
+                    "turn_frequency": "1"
+                }
+            ]
+        },
+        {
+            "class_name": "Mage",
+            "hp": "70",
+            "hit_mark": "4",
+            "specs":[
+                {
+                    "spec_name": "Firemage",
+                    "weapon": "fireball",
+                    "damage": "3d4",
+                    "crit_mark": "18",
+                    "turn_frequency": "2"
+                },
+                {
+                    "spec_name": "Frostmage",
+                    "weapon": "frosbolt",
+                    "damage": "1d6",
+                    "crit_mark": "18",
+                    "turn_frequency": "0.5"
+                }
+            ]
+        },
+        {
+            "class_name": "Rogue",
+            "hp": "85",
+            "hit_mark": "6",
+            "specs":[
+                {
+                    "spec_name": "Backstabber",
+                    "weapon": "daggers",
+                    "damage": "2d3",
+                    "crit_mark": "16",
+                    "turn_frequency": "1"
+                },
+                {
+                    "spec_name": "Crossbowman",
+                    "weapon": "crossbow",
+                    "damage": "2d4",
+                    "crit_mark": "19",
+                    "turn_frequency": "1"
+                }
+            ]
+        }
+    ],
+    
+    "monsters": [
+        {
+            "monster_name": "Goblin",
+            "hp": "5",
+            "hit_mark": "3",
+            "damage": "1d3"
+        }, 
+        {
+            "monster_name": "Troll",
+            "hp": "15",
+            "hit_mark": "4",
+            "damage": "1d6"
+        },
+        {
+            "monster_name": "Skeleton",
+            "hp": "5",
+            "hit_mark": "3",
+            "damage": "1d3"
+        },
+        {
+            "monster_name": "Zombie",
+            "hp": "10",
+            "hit_mark": "3",
+            "damage": "1d4"
+        },
+        {
+            "monster_name": "Thug",
+            "hp": "10",
+            "hit_mark": "3",
+            "damage": "1d4"
+        },
+        {
+            "monster_name": "Knight",
+            "hp": "20",
+            "hit_mark": "4",
+            "damage": "1d6"
+        },
+        {
+            "monster_name": "Murloc",
+            "hp": "5",
+            "hit_mark": "3",
+            "damage": "1d3"
+        },
+        {
+            "monster_name": "Orc",
+            "hp": "10",
+            "hit_mark": "3",
+            "damage": "1d4"
+        }, 
+        {
+            "monster_name": "The Shadow",
+            "hp": "50",
+            "hit_mark": "5",
+            "damage": "2d4"
+        }
+    ],
+    
+    "locations": [
+        {
+            "location_name": "Inn",
+            "direction_1": "Grassland",
+            "direction_2": "null",
+            "monster": "null",
+            "monster_number": "0",
+            "description": ""            
+        },
+        {
+            "location_name": "Grassland",
+            "direction_1": "River",
+            "direction_2": "Watermill",
+            "monster": "Thug",
+            "monster_number": "1",
+            "description": ""            
+        },
+        {
+            "location_name": "River",
+            "direction_1": "Lonely mountain",
+            "direction_2": "Abandoned village",
+            "monster": "Murloc",
+            "monster_number": "1",
+            "description": ""            
+        },
+        {
+            "location_name": "Watermill",
+            "direction_1": "Cemetery",
+            "direction_2": "null",
+            "monster": "Orc",
+            "monster_number": "1",
+            "description": ""            
+        },
+        {
+            "location_name": "Lonely mountain",
+            "direction_1": "Shadowy canyon",
+            "direction_2": "Troll cave",
+            "monster": "Goblin",
+            "monster_number": "1",
+            "description": ""            
+        },
+        {
+            "location_name": "Abandoned village",
+            "direction_1": "Old church",
+            "direction_2": "null",
+            "monster": "Knight",
+            "monster_number": "1",
+            "description": ""            
+        },
+        {
+            "location_name": "Cemetery",
+            "direction_1": "Old church",
+            "direction_2": "Marsh",
+            "monster": "Zombie",
+            "monster_number": "1",
+            "description": ""            
+        },
+        {
+            "location_name": "Shadowy canyon",
+            "direction_1": "Dark castle",
+            "direction_2": "null",
+            "monster": "Orc",
+            "monster_number": "2",
+            "description": ""            
+        },
+        {
+            "location_name": "Troll cave",
+            "direction_1": "Main road",
+            "direction_2": "null",
+            "monster": "Troll",
+            "monster_number": "1",
+            "description": ""            
+        },
+        {
+            "location_name": "Old church",
+            "direction_1": "Main road",
+            "direction_2": "null",
+            "monster": "Skeleton",
+            "monster_number": "1",
+            "description": ""            
+        },
+        {
+            "location_name": "Marsh",
+            "direction_1": "Dark castle",
+            "direction_2": "null",
+            "monster": "Murloc",
+            "monster_number": "3",
+            "description": ""            
+        },
+        {
+            "location_name": "Main road",
+            "direction_1": "Dark castle",
+            "direction_2": "null",
+            "monster": "Knight",
+            "monster_number": "2",
+            "description": ""            
+        },
+        {
+            "location_name": "Dark castle",
+            "direction_1": "null",
+            "direction_2": "null",
+            "monster": "The Shadow",
+            "monster_number": "1",
+            "description": ""            
+        }
+    ]       
+}

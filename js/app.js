@@ -213,7 +213,7 @@ var main = function () {
     $(".back-to-top").on("click", BackToTopClick);
     
     function BackToTopClick(){
-        $("body").animate({scrollTop: 0});
+        $("html, body").animate({scrollTop: 0});
     };
     
     //
