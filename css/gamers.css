@@ -1,0 +1,73 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 31, 2016, 8:03:20 PM
+    Author     : NerZhul
+*/
+
+p {
+    font-family: CopperplateLight, sans-serif;
+    font-size: 18px;
+}
+
+h3 {
+    font-family: Copperplate, sans-serif;
+}
+
+span, button {
+    font-family: CopperplateBold, sans-serif;
+}
+
+/*
+    SECTION.START
+*/
+
+section.start {
+    padding-top: 70px;
+}
+
+section.start .container > img {
+    margin: 0 auto;
+}
+
+section.start .container > p {
+    text-indent: 30px;
+}
+    
+section.start h1 {
+    text-align: center;
+    margin: 20px auto 0 auto;
+    font-family: Copperplate, sans-serif;
+    font-size: 50px;
+    color: #0099cc;
+    text-shadow: 2px 2px 2px #333;
+}
+
+section.start h3{
+    text-align: center;
+}
+
+section.start li img {
+    width: 40px;
+}
+
+section.start button {
+    display: block;
+    margin: 30px auto;
+    font-size: 35px;
+}
+
+/*
+    SECTION.INTRO
+*/
+
+section.intro .container {
+    
+    display: none;
+    
+    background-color: #000;
+    border-radius: 10px;
+}

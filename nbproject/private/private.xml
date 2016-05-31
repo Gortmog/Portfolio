@@ -5,14 +5,20 @@
         <group>
             <file>file:/D:/Soft/JS/Portfolio/gulpfile.js</file>
             <file>file:/D:/Soft/JS/Portfolio/Gruntfile.js</file>
+            <file>file:/D:/Soft/JS/Portfolio/css/projects.css</file>
             <file>file:/D:/Soft/JS/Portfolio/js/app.js</file>
-            <file>file:/D:/Soft/JS/Portfolio/bower.json</file>
             <file>file:/D:/Soft/JS/Portfolio/.bowerrc</file>
             <file>file:/D:/Soft/JS/Portfolio/index.html</file>
             <file>file:/D:/Soft/JS/Portfolio/css/main.css</file>
             <file>file:/D:/Soft/JS/Portfolio/view/about.html</file>
-            <file>file:/D:/Soft/JS/Portfolio/package.json</file>
             <file>file:/D:/Soft/JS/Portfolio/css/about.css</file>
+            <file>file:/D:/Soft/JS/Portfolio/data/family.json</file>
+            <file>file:/D:/Soft/JS/Portfolio/css/gamers.css</file>
+            <file>file:/D:/Soft/JS/Portfolio/bower.json</file>
+            <file>file:/D:/Soft/JS/Portfolio/view/gamers.html</file>
+            <file>file:/D:/Soft/JS/Portfolio/data/gamers.json</file>
+            <file>file:/D:/Soft/JS/Portfolio/view/projects.html</file>
+            <file>file:/D:/Soft/JS/Portfolio/package.json</file>
         </group>
     </open-files>
 </project-private>

@@ -4,6 +4,7 @@
             "class_name": "Warrior",
             "hp": "100",
             "hit_mark": "5",
+            "description": "",
             "specs":[
                 {
                     "spec_name": "Axeman",
@@ -25,6 +26,7 @@
             "class_name": "Mage",
             "hp": "70",
             "hit_mark": "4",
+            "description": "",
             "specs":[
                 {
                     "spec_name": "Firemage",
@@ -46,6 +48,7 @@
             "class_name": "Rogue",
             "hp": "85",
             "hit_mark": "6",
+            "description": "",
             "specs":[
                 {
                     "spec_name": "Backstabber",

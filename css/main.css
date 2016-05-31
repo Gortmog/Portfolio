@@ -146,12 +146,6 @@ header .nav-pills li a:hover {
     color: #fff;
 }
 
-.back-to-top button:hover {
-    border-color: #666;
-    background-color: #fff;
-    color: #000;
-}
-
 .back-to-top button:focus,
 .back-to-top button:active,
 .back-to-top button:focus:active {
@@ -204,6 +198,46 @@ section.projects img {
     display: inline-block;
 }
 
+section.projects h1 {
+    font-family: CopperplateBold, sans-serif;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+section.projects .powered-by {
+    margin: 30px 0;
+}
+
+section.projects .powered-by h3, 
+section.projects .powered-by img {
+    display: inline;
+}
+
+section.projects a:hover {
+    text-decoration: none;
+}
+
+section.projects .powered-by img {
+    width: 40px;
+    margin-top: -10px;
+    margin-left: 5px;
+}
+
+section.projects .powered-by h3 {
+    font-size: 30px;
+    color: #000;
+    font-family: Copperplate, sans-serif;
+}
+
+section.projects a h1 {
+    text-align: center;
+    margin: 20px auto 0 auto;
+    font-family: Copperplate, sans-serif;
+    font-size: 50px;
+    color: #0099cc;
+    text-shadow: 2px 2px 2px #333;
+}
+
 /*
     FOOTER
 */
@@ -253,6 +287,12 @@ footer .copyright {
     header .nav-icon {
         display: none;
     }
+    
+    .back-to-top button:hover {
+        border-color: #666;
+        background-color: #fff;
+        color: #000;
+    }
 }
 
 @media (max-width: 767px) {
@@ -270,7 +310,13 @@ footer .copyright {
     header .nav-pills > li {
         float: none;
     }
-     
+    
+    .back-to-top button:hover {
+        border-color: #333;
+        background-color: #666;
+        color: #fff;
+    }
+    
     footer ul p {
         display: none;
     }
