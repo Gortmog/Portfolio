@@ -1,4 +1,10 @@
 {
+    
+    "intro":
+        {
+            "introduction": "You sit in the Inn..."
+        },
+    
     "heroes":[
         {
             "class_name": "Warrior",

@@ -15,6 +15,7 @@ and open the template in the editor.
         <script src="../js/vendor/jquery-1.12.1.min.js"></script>
         <script src="../js/vendor/bootstrap.min.js"></script>
         <script src="../js/app.js" type="text/javascript"></script>
+        <script src="../js/gamers.js" type="text/javascript"></script>
     </head>
     <body>
          
@@ -104,7 +105,147 @@ and open the template in the editor.
         <section class="intro">
             <div class="container">
                 <h1>The story begins...</h1>
-            </div>
+                <p>You are in the beginning of your journey. You heard stories about great evil on the south & now you search for any rumors that could lead you to its location.
+                    It's dusky already and you notice the inn along the road. You decide to stay here for the night.</p>
+                <p>While drinking your second pint of fine ale you see several soldiers enter the inn & approach the bartender. In couple of minutes you can hear those soldiers 
+                    talking to each other about the news from the capital. The king is desperate - the princess has been kidnaped. And you hear the name: The Shadow...
+                    You recall this name and now you are sure that The Shadow is the source of the southern evil. Now your quest becomes as clear as it could be - you have to travel 
+                    to the south, kill The Shadow and rescue the princess.</p>
+                <p>You rise up and approach to the soldiers.</p>
+                <p>- I will save the princess. Do you know where the do I find The Shadow?</p>
+                <p>- What's your name stranger? - one of the soldiers asks.</p>
+                <form>
+                    <input type="text">
+                </form> 
+                <h1>Choose your character class and specialization:</h1>
+                <div class="row">
+                    <div class="col-lg-4 warrior">
+                        <div class="class-name">
+                            <img class="char-class-img" src="../media/Warrior_crest.png" alt=""/>
+                            <h3>WARRIOR</h3>
+                        </div>    
+                        <div class="general-stats">
+                            <ul>
+                                <li>
+                                    <img class="hp" src="../media/HP.png" alt=""/>
+                                    <p>100 HP</p>
+                                </li>
+                                <li>
+                                    <p>Monster hit mark*: 5</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <img class="char-spec-img" src="../media/warrior_axe.png" alt=""/>
+                                <h4>Axeman</h4>
+                                <ul>
+                                    <li>Weapon: <span>axe</span></li>
+                                    <li>Damage: <span>1d12</span></li>
+                                    <li>Crit mark**: <span>16</span></li>
+                                    <li>Turn interval: <span>2</span></li>
+                                </ul>
+                                <button type="button" class="btn">CHOOSE AXEMAN</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <img class="char-spec-img" src="../media/warrior_sword.png" alt=""/>
+                                <h4>Swordsman</h4>
+                                <ul>
+                                    <li>Weapon: <span>sword</span></li>
+                                    <li>Damage: <span>1d8</span></li>
+                                    <li>Crit mark**: <span>18</span></li>
+                                    <li>Turn interval: <span>1</span></li>
+                                </ul>
+                                <button type="button" class="btn">CHOOSE SWORDSMAN</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mage">
+                        <div class="class-name">
+                            <img class="char-class-img" src="../media/Mage_crest.png" alt=""/>
+                            <h3>MAGE</h3>
+                        </div>    
+                        <div class="general-stats">
+                            <ul>
+                                <li>
+                                    <img class="hp" src="../media/HP.png" alt=""/>
+                                    <p>70 HP</p>
+                                </li>
+                                <li>
+                                    <p>Monster hit mark*: 4</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <img class="char-spec-img" src="../media/mage_fire.png" alt=""/>
+                                <h4>Firemage</h4>
+                                <ul>
+                                    <li>Weapon: <span>fireball</span></li>
+                                    <li>Damage: <span>3d4</span></li>
+                                    <li>Crit mark**: <span>18</span></li>
+                                    <li>Turn interval: <span>2</span></li>
+                                </ul>
+                                <button type="button" class="btn">CHOOSE FIREMAGE</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <img class="char-spec-img" src="../media/mage_frost.png" alt=""/>
+                                <h4>Frostmage</h4>
+                                <ul>
+                                    <li>Weapon: <span>frostbolt</span></li>
+                                    <li>Damage: <span>1d6</span></li>
+                                    <li>Crit mark**: <span>18</span></li>
+                                    <li>Turn interval: <span>0.5</span></li>
+                                </ul>
+                                <button type="button" class="btn">CHOOSE FROSTMAGE</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 rogue">
+                        <div class="class-name">
+                            <img class="char-class-img" src="../media/Rogue_crest.png" alt=""/>
+                            <h3>ROGUE</h3>
+                        </div>    
+                        <div class="general-stats">
+                            <ul>
+                                <li>
+                                    <img class="hp" src="../media/HP.png" alt=""/>
+                                    <p>85 HP</p>
+                                </li>
+                                <li>
+                                    <p>Monster hit mark*: 6</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <img class="char-spec-img" src="../media/rogue_daggers.png" alt=""/>
+                                <h4>Backstabber</h4>
+                                <ul>
+                                    <li>Weapon: <span>daggers</span></li>
+                                    <li>Damage: <span>2d3</span></li>
+                                    <li>Crit mark**: <span>16</span></li>
+                                    <li>Turn interval: <span>1</span></li>
+                                </ul>
+                                <button type="button" class="btn">CHOOSE BACKSTABBER</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <img class="char-spec-img" src="../media/rogue_crossbow.png" alt=""/>
+                                <h4>Crossbowman</h4>
+                                <ul>
+                                    <li>Weapon: <span>crossbow</span></li>
+                                    <li>Damage: <span>2d4</span></li>
+                                    <li>Crit mark**: <span>19</span></li>
+                                    <li>Turn interval: <span>1</span></li>
+                                </ul>
+                                <button type="button" class="btn">CHOOSE CROSSBOWMAN</button>
+                            </div>
+                        </div>
+                    </div>
+                    <p>*Lower threshold on the 1d20 roll for the monster to hit the hero.</p><br>
+                    <p>**Lower threshold on the 1d20 roll for a hero to land a critical hit.</p>
+                </div>
+            </div>   
         </section>
         
         <footer>

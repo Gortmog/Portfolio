@@ -13,11 +13,11 @@ p {
     font-size: 18px;
 }
 
-h3 {
+h3, h4 {
     font-family: Copperplate, sans-serif;
 }
 
-span, button {
+span, button, h1 {
     font-family: CopperplateBold, sans-serif;
 }
 
@@ -64,10 +64,102 @@ section.start button {
     SECTION.INTRO
 */
 
-section.intro .container {
-    
+section.intro {
+    margin-top: 52px;
     display: none;
-    
-    background-color: #000;
-    border-radius: 10px;
+}
+
+section.intro .container {
+    background: url("../media/1-Inn.jpg") center no-repeat;
+    background-size: cover;
+    border-radius: 0px;
+    color: #fff;
+}
+
+section.intro .char-class-img {
+    height: 100px;
+}
+
+section.intro .char-spec-img {
+    height: 40px;
+}
+
+section.intro .hp {
+    height: 25px;
+}
+
+section.intro img,
+section.intro .row h3,
+section.intro .row h4,
+section.intro .row p {
+    display: inline;
+}
+
+section.intro .col-xs-6 {
+    padding: 0px 4px;
+}
+
+section.intro .row {
+    text-align: center;
+}
+
+section.intro .container > .row {
+    background-color: rgba(100, 100, 100, 0.5);
+}
+
+section.intro ul {
+    list-style-type: none;
+    margin: 10px 0; 
+    padding: 0;
+    text-align: left;
+}
+
+section.intro li {
+    margin: 0; 
+    padding: 0;
+    font-size: 16px;
+    font-family: Copperplate, sans-serif;
+}
+
+section.intro p {
+    text-indent: 30px;
+    font-size: 20px;
+    font-family: Copperplate, sans-serif;
+}
+
+section.intro .row p {
+    font-size: 16px;
+    font-family: Copperplate, sans-serif;
+}
+
+section.intro .general-stats ul {
+    margin-left: 25%;
+}
+
+section.intro button,
+section.intro button:hover,
+section.intro button:focus,
+section.intro button:active,
+section.intro button:focus:active {
+    background-color: #264d73;
+    color: #fff;
+    outline: none;
+    border: 1px solid #333;
+    font-size: 11px;
+    padding: 6px;
+    margin-bottom: 5px;
+}
+
+section.intro span {
+    font-style: italic;
+}
+
+section.intro input {
+    background-color: rgba(100, 100, 100, 0.8);
+}
+
+section.intro input,
+section.intro input:focus,
+section.intro input:active {
+    outline: none;
 }
