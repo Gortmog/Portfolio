@@ -38,7 +38,7 @@
                     "spec_name": "Firemage",
                     "weapon": "fireball",
                     "damage": "3d4",
-                    "crit_mark": "18",
+                    "crit_mark": "17",
                     "turn_frequency": "2"
                 },
                 {

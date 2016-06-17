@@ -111,7 +111,6 @@ section.intro ul {
     list-style-type: none;
     margin: 10px 0; 
     padding: 0;
-    text-align: left;
 }
 
 section.intro li {
@@ -133,7 +132,7 @@ section.intro .row p {
 }
 
 section.intro .general-stats ul {
-    margin-left: 25%;
+    margin-left: 0;
 }
 
 section.intro button,
@@ -156,10 +155,25 @@ section.intro span {
 
 section.intro input {
     background-color: rgba(100, 100, 100, 0.8);
+    font-family: Copperplate, sans-serif;
 }
 
 section.intro input,
 section.intro input:focus,
 section.intro input:active {
     outline: none;
+}
+
+
+section.intro .char-name,
+section.intro .char-name:hover,
+section.intro .char-name:focus,
+section.intro .char-name:active,
+section.intro .char-name:focus:active {
+    background-color: #fff;
+    color: #000;
+    outline: none;
+    border: 1px solid #333;
+    font-size: 11px;
+    margin-top: 5px;
 }
