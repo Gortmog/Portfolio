@@ -10,21 +10,23 @@
             "class_name": "Warrior",
             "hp": "100",
             "hit_mark": "5",
-            "description": "",
+            "class_image": "../media/Warrior_crest.png",
             "specs":[
                 {
                     "spec_name": "Axeman",
                     "weapon": "axe",
                     "damage": "1d12",
                     "crit_mark": "16",
-                    "turn_frequency": "2"
+                    "turn_frequency": "2",
+                    "spec_image": "warrior_axe"
                 },
                 {
                     "spec_name": "Swordsman",
                     "weapon": "sword",
                     "damage": "1d8",
                     "crit_mark": "18",
-                    "turn_frequency": "1"
+                    "turn_frequency": "1",
+                    "spec_image": "warrior_sword"
                 }
             ]
         },
@@ -32,21 +34,23 @@
             "class_name": "Mage",
             "hp": "70",
             "hit_mark": "4",
-            "description": "",
+            "class_image": "../media/Mage_crest.png",
             "specs":[
                 {
                     "spec_name": "Firemage",
                     "weapon": "fireball",
                     "damage": "3d4",
                     "crit_mark": "17",
-                    "turn_frequency": "2"
+                    "turn_frequency": "2",
+                    "spec_image": "mage_frost"
                 },
                 {
                     "spec_name": "Frostmage",
                     "weapon": "frosbolt",
                     "damage": "1d6",
                     "crit_mark": "18",
-                    "turn_frequency": "0.5"
+                    "turn_frequency": "0.5",
+                    "spec_image": "mage_fire"
                 }
             ]
         },
@@ -54,21 +58,23 @@
             "class_name": "Rogue",
             "hp": "85",
             "hit_mark": "6",
-            "description": "",
+            "class_image": "../media/Rogue_crest.png",
             "specs":[
                 {
                     "spec_name": "Backstabber",
                     "weapon": "daggers",
                     "damage": "2d3",
                     "crit_mark": "16",
-                    "turn_frequency": "1"
+                    "turn_frequency": "1",
+                    "spec_image": "rogue_daggers"
                 },
                 {
                     "spec_name": "Crossbowman",
                     "weapon": "crossbow",
                     "damage": "2d4",
                     "crit_mark": "19",
-                    "turn_frequency": "1"
+                    "turn_frequency": "1",
+                    "spec_image": "rogue_crossbow"
                 }
             ]
         }
