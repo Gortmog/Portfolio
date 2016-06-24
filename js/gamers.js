@@ -70,13 +70,11 @@ var main = function () {
     
     var classChoices = document.querySelectorAll(".class-choice");
     
-    for (var i = 0; i < classChoices.length; i++)
-    {
+    for (var i = 0; i < classChoices.length; i++) {
         (function(index){
             classChoices[i].onclick = function(){
                 classIndex = Math.floor(index/2);
                 specIndex = index%2;
-                //console.log(classIndex + " " + specIndex);
                 if (charName === undefined) {
                     var forcedName = prompt("The hero like you still should have a name!", "Newbie");
                     if (forcedName !== null) {
@@ -92,7 +90,6 @@ var main = function () {
         player = new Character(charName, classIndex, specIndex);
         max_HP = player.maxHP;
         current_HP = max_HP;
-        console.log(DamageRoll(player.damage));
     }
     
     //
@@ -102,7 +99,7 @@ var main = function () {
     function Character(charName, classIndex, specIndex) {
         this.name = charName;
         this.maxHP = gamersData.heroes[classIndex].hp;
-        this.hit = gamersData.heroes[classIndex].hit_mark;
+        this.monster_hit = gamersData.heroes[classIndex].hit_mark;
         this.class = gamersData.heroes[classIndex].class_name;
         this.spec = gamersData.heroes[classIndex].specs[specIndex].spec_name;
         this.weapon = gamersData.heroes[classIndex].specs[specIndex].weapon;
@@ -117,9 +114,35 @@ var main = function () {
     // LOCATION_CONSTRUCTOR
     //
     
+    function Location(locationName) {
+        for (var i = 0; i < gamersData.locations.length; i++) {
+            if (gamersData.locations[i].location_name === locationName) {
+                this.name = gamersData.locations[i].location_name;
+                this.direction_1 = gamersData.locations[i].direction_1;
+                this.direction_2 = gamersData.locations[i].direction_2;
+                this.monster = gamersData.locations[i].monster;
+                this.monster_number = gamersData.locations[i].monster_number;
+                this.image = gamersData.locations[i].image;
+                this.description = gamersData.locations[i].description;
+            }
+        }        
+    }
+    
     //
     // MONSTER_CONSTRUCTOR
     //
+    
+    function Monster(monsterName) {
+        for (var i = 0; i < gamersData.monsters.length; i++) {
+            if (gamersData.monsters[i].monster_name === monsterName) {
+                this.name = gamersData.monsters[i].monster_name;
+                this.HP = gamersData.monsters[i].hp;
+                this.player_hit = gamersData.monsters[i].hit_mark;
+                this.damage = gamersData.monsters[i].damage;
+                this.image = gamersData.monsters[i].image;
+            }
+        }
+    }
     
     //
     // DICE_ROLLS
@@ -135,7 +158,6 @@ var main = function () {
         } else if (number >= crit) {
             outcome = "crit";
         };
-        //console.log(number + " " + outcome);
         return {
             number: number,
             outcome: outcome
@@ -146,11 +168,17 @@ var main = function () {
         var quantity = damage.substr(0, 1);
         var max_damage = damage.substr(2);
         var output = 0;
-        for (i = 1; i <= quantity; i++) {
+        for (var i = 1; i <= quantity; i++) {
             output += Math.floor((Math.random()*max_damage)+1);
         };
         return output;
     }
+    
+    //
+    // MAIN_CYCLE
+    //
+    
+    
     
 };
 

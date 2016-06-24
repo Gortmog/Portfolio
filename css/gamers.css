@@ -71,7 +71,7 @@ section.intro {
 }
 
 section.intro .container {
-    background: url("../media/1-Inn.jpg") center no-repeat;
+    background: url("../media/0-Inn.jpg") center no-repeat;
     background-size: cover;
     border-radius: 0px;
     color: #fff;

@@ -85,55 +85,64 @@
             "monster_name": "Goblin",
             "hp": "5",
             "hit_mark": "3",
-            "damage": "1d3"
+            "damage": "1d3",
+            "image": "../media/Goblin.png"
         }, 
         {
             "monster_name": "Troll",
             "hp": "15",
             "hit_mark": "4",
-            "damage": "1d6"
+            "damage": "1d6",
+            "image": "../media/Troll.png"
         },
         {
             "monster_name": "Skeleton",
             "hp": "5",
             "hit_mark": "3",
-            "damage": "1d3"
+            "damage": "1d3",
+            "image": "../media/Skeleton.png"
         },
         {
             "monster_name": "Zombie",
             "hp": "10",
             "hit_mark": "3",
-            "damage": "1d4"
+            "damage": "1d4",
+            "image": "../media/Zombie.png"
         },
         {
             "monster_name": "Thug",
             "hp": "10",
             "hit_mark": "3",
-            "damage": "1d4"
+            "damage": "1d4",
+            "image": "../media/Thug.png"
         },
         {
             "monster_name": "Knight",
             "hp": "20",
             "hit_mark": "4",
-            "damage": "1d6"
+            "damage": "1d6",
+            "image": "../media/Knight.png"
         },
         {
             "monster_name": "Murloc",
             "hp": "5",
             "hit_mark": "3",
-            "damage": "1d3"
+            "damage": "1d3",
+            "image": "../media/Murloc.png"
         },
         {
             "monster_name": "Orc",
             "hp": "10",
             "hit_mark": "3",
-            "damage": "1d4"
+            "damage": "1d4",
+            "image": "../media/Orc.png"
         }, 
         {
             "monster_name": "The Shadow",
             "hp": "50",
             "hit_mark": "5",
-            "damage": "2d4"
+            "damage": "2d4",
+            "image": "../media/The_Shadow.png"
         }
     ],
     
@@ -144,6 +153,7 @@
             "direction_2": "null",
             "monster": "null",
             "monster_number": "0",
+            "image": "../media/0-Inn.jpg",
             "description": ""            
         },
         {
@@ -152,6 +162,7 @@
             "direction_2": "Watermill",
             "monster": "Thug",
             "monster_number": "1",
+            "image": "../media/1-Grassland.jpg",
             "description": ""            
         },
         {
@@ -160,6 +171,7 @@
             "direction_2": "Abandoned village",
             "monster": "Murloc",
             "monster_number": "1",
+            "image": "../media/2-River.jpg",
             "description": ""            
         },
         {
@@ -168,6 +180,7 @@
             "direction_2": "null",
             "monster": "Orc",
             "monster_number": "1",
+            "image": "../media/3-Watermill.jpg",
             "description": ""            
         },
         {
@@ -176,6 +189,7 @@
             "direction_2": "Troll cave",
             "monster": "Goblin",
             "monster_number": "1",
+            "image": "../media/4-Lonely_Mountain.jpg",
             "description": ""            
         },
         {
@@ -184,6 +198,7 @@
             "direction_2": "null",
             "monster": "Knight",
             "monster_number": "1",
+            "image": "../media/5-Abandoned_Village.jpg",
             "description": ""            
         },
         {
@@ -192,6 +207,7 @@
             "direction_2": "Marsh",
             "monster": "Zombie",
             "monster_number": "1",
+            "image": "../media/6-Cemetery.jpg",
             "description": ""            
         },
         {
@@ -200,6 +216,7 @@
             "direction_2": "null",
             "monster": "Orc",
             "monster_number": "2",
+            "image": "../media/7-Shadowy_Canyon.jpg",
             "description": ""            
         },
         {
@@ -208,6 +225,7 @@
             "direction_2": "null",
             "monster": "Troll",
             "monster_number": "1",
+            "image": "../media/8-Troll_Cave.jpg",
             "description": ""            
         },
         {
@@ -216,6 +234,7 @@
             "direction_2": "null",
             "monster": "Skeleton",
             "monster_number": "1",
+            "image": "../media/9-Old_Church.jpg",
             "description": ""            
         },
         {
@@ -224,6 +243,7 @@
             "direction_2": "null",
             "monster": "Murloc",
             "monster_number": "3",
+            "image": "../media/10-Marsh.jpg",
             "description": ""            
         },
         {
@@ -232,6 +252,7 @@
             "direction_2": "null",
             "monster": "Knight",
             "monster_number": "2",
+            "image": "../media/11-Main_Road.jpg",
             "description": ""            
         },
         {
@@ -240,6 +261,7 @@
             "direction_2": "null",
             "monster": "The Shadow",
             "monster_number": "1",
+            "image": "../media/12-Dark_Castle.jpg",
             "description": ""            
         }
     ]       
