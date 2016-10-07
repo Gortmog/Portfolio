@@ -181,11 +181,34 @@ section.intro .char-name:focus:active {
 }
 
 /*
-    SECTION.MODULE
+    SECTION.MAIN-MODULE
 */
 
-section.module {
+section.main-module {
     margin-top: 52px;
     display: none;
     text-shadow: 1px 1px black;
+}
+
+section.main-module .potrait{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+section.main-module h2{
+    margin: 0 auto;
+}
+
+section.main-module .regalia img,
+section.main-module .regalia p {
+    display: inline;
+}
+
+section.main-module .regalia > img{
+    height: 25px;
+}
+
+section.main-module img:nth-child(5) {
+    margin-left: 20px;
 }

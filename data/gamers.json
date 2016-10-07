@@ -18,7 +18,7 @@
                     "damage": "1d12",
                     "crit_mark": "16",
                     "turn_frequency": "2",
-                    "spec_image": "warrior_axe"
+                    "spec_image": "../media/warrior_axe.png"
                 },
                 {
                     "spec_name": "Swordsman",
@@ -26,7 +26,7 @@
                     "damage": "1d8",
                     "crit_mark": "18",
                     "turn_frequency": "1",
-                    "spec_image": "warrior_sword"
+                    "spec_image": "../media/warrior_sword.png"
                 }
             ]
         },
@@ -42,7 +42,7 @@
                     "damage": "3d4",
                     "crit_mark": "17",
                     "turn_frequency": "2",
-                    "spec_image": "mage_frost"
+                    "spec_image": "../media/mage_frost.png"
                 },
                 {
                     "spec_name": "Frostmage",
@@ -50,7 +50,7 @@
                     "damage": "1d6",
                     "crit_mark": "18",
                     "turn_frequency": "0.5",
-                    "spec_image": "mage_fire"
+                    "spec_image": "../media/mage_fire.png"
                 }
             ]
         },
@@ -66,7 +66,7 @@
                     "damage": "2d3",
                     "crit_mark": "16",
                     "turn_frequency": "1",
-                    "spec_image": "rogue_daggers"
+                    "spec_image": "../media/rogue_daggers.png"
                 },
                 {
                     "spec_name": "Crossbowman",
@@ -74,7 +74,7 @@
                     "damage": "2d4",
                     "crit_mark": "19",
                     "turn_frequency": "1",
-                    "spec_image": "rogue_crossbow"
+                    "spec_image": "../media/rogue_crossbow.png"
                 }
             ]
         }

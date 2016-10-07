@@ -250,20 +250,48 @@ and open the template in the editor.
             </div>   
         </section>
         
-        <section class="module">
+        <section class="main-module">
             <div class="container">
                 <h1 class="location-name">1</h1>
                 <p class="location-description">2</p>
                 <div class="row">
-                    <div class="col-sm-6">
-                        <div class="pull-left">
-                            <img src="../media/mage_fire.png" alt=""/>
+                    <div class="col-sm-6" id="player-info">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img class="portrait" src="../media/mage_fire.png" alt=""/>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="pull-left">
+                                    <h2>GORTMOG</h2>
+                                    <div class="regalia">
+                                        <img src="../media/HP.png" alt=""/>
+                                        <p id="player-current-hp">0</p>
+                                        <p>/</p>
+                                        <p id="player-max-hp">0</p>
+                                        <img src="../media/Healthpotion.png" alt=""/>
+                                        <p id="hp-number">0</p>
+                                    </div>
+                                </div>    
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="pull-right">
-                            <img src="../media/mage_frost.png" alt=""/>
-                        </div>    
+                    <div class="col-sm-6" id="monster-info">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <div class="pull-right">
+                                    <h2>GORTMOG</h2>
+                                    <div class="regalia">
+                                        <img src="../media/HP.png" alt=""/>
+                                        <p id="monster-current-hp">0</p>
+                                        <p>/</p>
+                                        <p id="monster-max-hp">0</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <img class="portrait" src="../media/mage_frost.png" alt=""/>
+                            </div>
+                        </div> 
                     </div>
                 </div>
             </div>

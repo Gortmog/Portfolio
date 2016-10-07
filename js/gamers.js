@@ -12,9 +12,13 @@ var main = function () {
     var classIndex;
     var specIndex;
     var gamersData;
-    var max_HP;
-    var current_HP;
+    var player_max_HP;
+    var player_current_HP;
+    var enemy_max_HP;
+    var enemy_current_HP;
     var player;
+    var enemy;
+    var locationName = "Grassland";
     
     //
     // GET_JSON_DATA
@@ -23,7 +27,7 @@ var main = function () {
     function loadJSON(file, callback) {   
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-        xobj.open('GET', file, true);
+        xobj.open("GET", file, true);
         xobj.onreadystatechange = function () {
             if (xobj.readyState === 4 && xobj.status === 200) {
                 callback(xobj.responseText);
@@ -77,9 +81,7 @@ var main = function () {
                 specIndex = index%2;
                 if (charName === undefined) {
                     var forcedName = prompt("The hero like you still should have a name!", "Newbie");
-                    if (forcedName !== null) {
-                        charName = forcedName;
-                    };
+                    charName = forcedName || "Newbie";
                 };
                 StartJourney();
             };   
@@ -87,9 +89,29 @@ var main = function () {
     }
     
     function StartJourney() {
+        document.querySelector(".intro").style.display = "none";
+        document.querySelector(".main-module").style.display = "block";
+        CreateLocation();
+        CreateCharacter();
+        CreateMonster();
+    }
+    
+    function CreateCharacter() {
         player = new Character(charName, classIndex, specIndex);
-        max_HP = player.maxHP;
-        current_HP = max_HP;
+        player_max_HP = player.maxHP;
+        player_current_HP = player_max_HP;
+        document.querySelectorAll(".portrait")[0].src = player.spec_img;
+    }
+    
+    function CreateMonster() {
+        enemy = new Monster(monsterName);
+        enemy_max_HP = enemy.maxHP;
+        enemyr_current_HP = enemy_max_HP;
+    }
+    
+    function CreateLocation() {
+        env = new Location(locationName);
+        monsterName = env.monster;
     }
     
     //
@@ -136,7 +158,7 @@ var main = function () {
         for (var i = 0; i < gamersData.monsters.length; i++) {
             if (gamersData.monsters[i].monster_name === monsterName) {
                 this.name = gamersData.monsters[i].monster_name;
-                this.HP = gamersData.monsters[i].hp;
+                this.maxHP = gamersData.monsters[i].hp;
                 this.player_hit = gamersData.monsters[i].hit_mark;
                 this.damage = gamersData.monsters[i].damage;
                 this.image = gamersData.monsters[i].image;
