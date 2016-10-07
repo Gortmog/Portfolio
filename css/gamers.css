@@ -166,7 +166,6 @@ section.intro input:active {
     outline: none;
 }
 
-
 section.intro .char-name,
 section.intro .char-name:hover,
 section.intro .char-name:focus,
@@ -179,4 +178,14 @@ section.intro .char-name:focus:active {
     font-size: 12px;
     margin-top: 5px;
     padding: 5px;
+}
+
+/*
+    SECTION.MODULE
+*/
+
+section.module {
+    margin-top: 52px;
+    display: none;
+    text-shadow: 1px 1px black;
 }
