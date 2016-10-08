@@ -8,6 +8,11 @@ and open the template in the editor.
     Author     : NerZhul
 */
 
+.inactive-button {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
 p {
     font-family: CopperplateLight, sans-serif;
     font-size: 18px;
@@ -190,14 +195,34 @@ section.main-module {
     text-shadow: 1px 1px black;
 }
 
-section.main-module .potrait{
-    width: 200px;
-    height: 200px;
+section.main-module .container {
+    background: url("../media/0-Inn.jpg") center no-repeat;
+    background-size: cover;
+    border-radius: 0px;
+    color: #fff;
+}
+
+section.main-module .info-part {
+    display: inline;
+    padding: 0 5px;
+}
+
+section.main-module .col-xs-12 {
+    padding: 0;
+}
+
+section.main-module #player-info .row,
+section.main-module #monster-info .row {
+    padding: 0 10px;
+}
+
+section.main-module img.portrait{
+    height: 75px;
     text-align: center;
 }
 
 section.main-module h2{
-    margin: 0 auto;
+    margin: 5px auto;
 }
 
 section.main-module .regalia img,
@@ -210,5 +235,60 @@ section.main-module .regalia > img{
 }
 
 section.main-module img:nth-child(5) {
-    margin-left: 20px;
+    margin-left: 10px;
+}
+
+section.main-module .battle-buttons {
+    text-align: center;
+}
+
+section.main-module button,
+section.main-module button:hover,
+section.main-module button:focus,
+section.main-module button:active,
+section.main-module button:focus:active {
+    background-color: #444;
+    color: #fff;
+    outline: none;
+    border: 3px solid #111;
+    font-size: 20px;
+    padding: 6px;
+    margin: 20px 20px;    
+}
+
+section.main-module #fight-button button {
+    margin: 330px auto;
+}
+
+section.main-module #fight-button {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+section.main-module #battle-buttons,
+section.main-module #log-screen,
+section.main-module #next-buttons {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+section.main-module #fight-button img, 
+section.main-module #battle-buttons img{
+    height: 30px;
+}
+
+section.main-module p {
+    text-indent: 30px;
+    font-size: 20px;
+    font-family: Copperplate, sans-serif;
+    white-space: pre-wrap;
+}
+
+section.main-module #log-screen {
+    width: 95%;
+    height: 580px;
+    margin: 20px auto;
+    background-color: black;
+    overflow-y: auto;
 }

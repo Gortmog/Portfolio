@@ -16,9 +16,11 @@ var main = function () {
     var player_current_HP;
     var enemy_max_HP;
     var enemy_current_HP;
+    var env;
     var player;
     var enemy;
     var locationName = "Grassland";
+    var hp_number = 0;
     
     //
     // GET_JSON_DATA
@@ -44,7 +46,7 @@ var main = function () {
     }
     
     //
-    // START_GAME
+    // GAME_INTRO
     //
     
     document.querySelector(".start-game").addEventListener("click", StartGame);
@@ -72,6 +74,10 @@ var main = function () {
         }
     }
     
+    //
+    // START_GAME
+    //    
+    
     var classChoices = document.querySelectorAll(".class-choice");
     
     for (var i = 0; i < classChoices.length; i++) {
@@ -81,7 +87,11 @@ var main = function () {
                 specIndex = index%2;
                 if (charName === undefined) {
                     var forcedName = prompt("The hero like you still should have a name!", "Newbie");
-                    charName = forcedName || "Newbie";
+                    if (forcedName === null) {
+                        return;
+                    } else {
+                        charName = forcedName || "Newbie";
+                    }
                 };
                 StartJourney();
             };   
@@ -101,17 +111,28 @@ var main = function () {
         player_max_HP = player.maxHP;
         player_current_HP = player_max_HP;
         document.querySelectorAll(".portrait")[0].src = player.spec_img;
+        document.querySelectorAll(".main-module h2")[0].innerHTML = player.name;
+        document.querySelector("#player-max-hp").innerHTML = player_max_HP;
+        document.querySelector("#player-current-hp").innerHTML = player_current_HP;
+        document.querySelector("#hp-number").innerHTML = hp_number;
     }
     
     function CreateMonster() {
         enemy = new Monster(monsterName);
         enemy_max_HP = enemy.maxHP;
-        enemyr_current_HP = enemy_max_HP;
+        enemy_current_HP = enemy_max_HP;
+        document.querySelectorAll(".portrait")[1].src = enemy.image;
+        document.querySelectorAll(".main-module h2")[1].innerHTML = enemy.name;
+        document.querySelector("#monster-max-hp").innerHTML = enemy_max_HP;
+        document.querySelector("#monster-current-hp").innerHTML = enemy_current_HP;
     }
     
     function CreateLocation() {
         env = new Location(locationName);
         monsterName = env.monster;
+        document.querySelector(".main-module > .container").style.backgroundImage = "url(" + env.image + ")";
+        document.querySelector("#location-name").innerHTML = env.name;
+        document.querySelector("#location-description").innerHTML = env.description;
     }
     
     //
@@ -200,7 +221,42 @@ var main = function () {
     // MAIN_CYCLE
     //
     
+    document.querySelector("#fight-button > button").addEventListener("click", StartFight);
     
+    function StartFight() {
+        if (hp_number === 0) {
+            document.querySelector("#hp-button").className += " inactive-button";
+        };
+        document.querySelector("#fight-button").style.opacity = 0;
+        setTimeout(function(){
+            document.querySelector("#fight-button").style.display = "none";
+            document.querySelector("#log-screen").style.display = "block";
+            document.querySelector("#battle-buttons").style.display = "block";
+            setTimeout(function(){
+                document.querySelector("#log-screen").style.opacity = 0.8;
+                document.querySelector("#battle-buttons").style.opacity = 1;
+            }, 100);
+        }, 500);
+        var node = document.createElement("p");
+        node.innerHTML = "Let the battle begin!";
+        document.querySelector("#log-screen").appendChild(node);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    window.setInterval(function() {
+        var elem = document.getElementById("log-screen");
+        elem.scrollTop = elem.scrollHeight;
+    }, 5000);
     
 };
 

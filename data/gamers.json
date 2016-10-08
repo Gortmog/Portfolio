@@ -42,7 +42,7 @@
                     "damage": "3d4",
                     "crit_mark": "17",
                     "turn_frequency": "2",
-                    "spec_image": "../media/mage_frost.png"
+                    "spec_image": "../media/mage_fire.png"
                 },
                 {
                     "spec_name": "Frostmage",
@@ -50,7 +50,7 @@
                     "damage": "1d6",
                     "crit_mark": "18",
                     "turn_frequency": "0.5",
-                    "spec_image": "../media/mage_fire.png"
+                    "spec_image": "../media/mage_frost.png"
                 }
             ]
         },
@@ -163,7 +163,7 @@
             "monster": "Thug",
             "monster_number": "1",
             "image": "../media/1-Grassland.jpg",
-            "description": ""            
+            "description": "Early morning you pack your belongings and leave the inn. The weather is great and you are in very uprising mood. The first part of your route to the south lies through the vast green grassland. </br>      In the afternoon you eat your lunch and continue your journey. Suddenly you notice an old cart with no horse near it. You approach with caution and spot a body of a farmer. You kneel down but the body rapidly gets up. It turns to be a thug that was waiting for a jorneyman. </br>      But you are no ordinary jorneyman! You are prepared for the fight!"            
         },
         {
             "location_name": "River",
