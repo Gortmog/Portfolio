@@ -49,7 +49,7 @@
                     "weapon": "frosbolt",
                     "damage": "1d6",
                     "crit_mark": "18",
-                    "turn_frequency": "0.5",
+                    "turn_frequency": "0",
                     "spec_image": "../media/mage_frost.png"
                 }
             ]

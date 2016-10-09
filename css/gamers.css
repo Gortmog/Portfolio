@@ -9,8 +9,16 @@ and open the template in the editor.
 */
 
 .inactive-button {
-    opacity: 0.8;
+    opacity: 0.6;
     cursor: not-allowed;
+}
+
+.player-text {
+    color: #3e9953;
+}
+
+.monster-text {
+    color: #c13409;
 }
 
 p {
