@@ -298,8 +298,8 @@ var main = function () {
                 } else {
                     var monster_damage = DamageRoll(enemy.damage);
                     node = document.createElement("p");
-                    node.innerHTML = enemy.name + " " + enemy_d20result.outcome + "s " + player.name + " for " + monster_damage + " damage. Ouch!"
-                    node.className += " monster-text";;
+                    node.innerHTML = enemy.name + " " + enemy_d20result.outcome + "s " + player.name + " for " + monster_damage + " damage. Ouch!";
+                    node.className += " monster-text";
                     document.querySelector("#log-screen").appendChild(node);
                 }
             };
