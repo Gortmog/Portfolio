@@ -192,6 +192,7 @@ var main = function () {
     //
     
     function D20Roll(hit, crit) {
+        crit = crit || 21;
         var number = Math.floor((Math.random()*20)+1);
         var outcome;
         if (number < hit) {
@@ -242,6 +243,63 @@ var main = function () {
         document.querySelector("#log-screen").appendChild(node);
     }
     
+    document.querySelector("#attack-button").addEventListener("click", AttackEnemy);
+    
+    var monster_turn = true;    // MONSTER ELIGIBILITY TO ATTACK
+    
+    function AttackEnemy() {
+        
+        // PLAYER ATTACKS
+                
+        var player_d20result = D20Roll(enemy.player_hit, player.crit);
+        var node = document.createElement("p");
+        node.innerHTML = player.name + " rolls " + player_d20result.number;
+        document.querySelector("#log-screen").appendChild(node);
+        if (player_d20result.outcome === "miss") {
+            node = document.createElement("p");
+            node.innerHTML = player.name + " misses " + enemy.name + ". Damn...";
+            document.querySelector("#log-screen").appendChild(node);
+        } else {
+            var player_damage = DamageRoll(player.damage);
+            if (player_d20result.outcome === "hit") {
+                node = document.createElement("p");
+                node.innerHTML = player.name + " " + player_d20result.outcome + "s " + enemy.name + " for " + player_damage + " damage. Nice.";
+                document.querySelector("#log-screen").appendChild(node);
+            } else if (player_d20result.outcome === "crit") {
+                node = document.createElement("p");
+                node.innerHTML = player.name + " " + player_d20result.outcome + "s " + enemy.name + " for " + player_damage*2 + " damage. BOOM!";
+                document.querySelector("#log-screen").appendChild(node);
+            }
+        }
+        
+        // MONSTER ATTACKS
+        
+        if (player.initiative === 0) {
+            monster_turn = !monster_turn;
+        }
+        if (monster_turn) {
+            for (var i = 0; i <= (player.initiative / 2); i++) {    // CHECK MONSTER TURN FREQUENCY
+                var enemy_d20result = D20Roll(player.monster_hit);    
+                node = document.createElement("p");
+                node.innerHTML = enemy.name + " rolls " + enemy_d20result.number;
+                document.querySelector("#log-screen").appendChild(node);  
+                if (enemy_d20result.outcome === "miss") {
+                    node = document.createElement("p");
+                    node.innerHTML = enemy.name + " misses " + player.name + ". Phew! That was close!";
+                    document.querySelector("#log-screen").appendChild(node);
+                } else {
+                    var monster_damage = DamageRoll(enemy.damage);
+                    node = document.createElement("p");
+                    node.innerHTML = enemy.name + " " + enemy_d20result.outcome + "s " + player.name + " for " + monster_damage + " damage. Ouch!";
+                    document.querySelector("#log-screen").appendChild(node);
+                }
+            };
+        }
+        
+        // SCROLL LOG TO THE BOTTOM
+        
+        document.getElementById("log-screen").scrollTop = document.getElementById("log-screen").scrollHeight;
+    }
     
     
     
