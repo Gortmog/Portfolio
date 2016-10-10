@@ -241,9 +241,8 @@ var main = function () {
         var node = document.createElement("p");
         node.innerHTML = "Let the battle begin!";
         document.querySelector("#log-screen").appendChild(node);
+        document.querySelector("#attack-button").addEventListener("click", AttackEnemy);
     }
-    
-    document.querySelector("#attack-button").addEventListener("click", AttackEnemy);
     
     var monster_turn = true;    // MONSTER ELIGIBILITY TO ATTACK
     
@@ -275,8 +274,13 @@ var main = function () {
                 document.querySelector("#log-screen").appendChild(node);
             }
         }
-        enemy_current_HP -= player_damage;
+        enemy_current_HP -= player_damage || 0;
         document.querySelector("#monster-current-hp").innerHTML = ((enemy_current_HP >= 0) ? enemy_current_HP : "0");
+        if (enemy_current_HP <= 0) {
+            enemy_current_HP = 0;
+            Death("player");
+            return;
+        }   
         
         // MONSTER ATTACKS
         
@@ -302,28 +306,56 @@ var main = function () {
                     node.className += " monster-text";
                     document.querySelector("#log-screen").appendChild(node);
                 }
+                player_current_HP -= monster_damage || 0;
+                document.querySelector("#player-current-hp").innerHTML = ((player_current_HP >= 0) ? player_current_HP : "0");
+                if (player_current_HP <= 0) {
+                    player_current_HP = 0;
+                    Death("enemy");
+                    return;
+                }   
+                
             };
         }
         
         // SCROLL LOG TO THE BOTTOM
         
-        document.getElementById("log-screen").scrollTop = document.getElementById("log-screen").scrollHeight;
+        document.querySelector("#log-screen").scrollTop = document.querySelector("#log-screen").scrollHeight;
+    }
+    
+    
+    function Death(subject) {
+        var j;
+        var final_text;
+        var next_content;
+        if (subject === "player") {
+            j = 1;
+            final_text = "YOU WIN";
+            next_content = "#next-buttons";
+        } else if (subject === "enemy") {
+            j = 0;
+            final_text = "GAME OVER";
+            next_content = "#restart-button";
+        }
+        document.querySelectorAll(".portrait")[j].src = "../media/skull.png";
+        node = document.createElement("h3");
+        node.innerHTML = final_text;
+        node.className += " gameover";
+        document.querySelector("#log-screen").appendChild(node);
+        document.querySelector("#log-screen").scrollTop = document.querySelector("#log-screen").scrollHeight;
+        document.querySelector("#attack-button").removeEventListener("click", AttackEnemy);
+        document.querySelector("#battle-buttons").style.opacity = 0;
+        setTimeout(function(){
+            document.querySelector("#battle-buttons").style.display = "none";
+            document.querySelector(next_content).style.display = "block";
+            setTimeout(function(){
+                document.querySelector(next_content).style.opacity = 1;
+            }, 100);
+        }, 500);
     }
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    window.setInterval(function() {
-        var elem = document.getElementById("log-screen");
-        elem.scrollTop = elem.scrollHeight;
-    }, 5000);
     
 };
 

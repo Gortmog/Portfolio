@@ -21,6 +21,16 @@ and open the template in the editor.
     color: #c13409;
 }
 
+.gameover {
+    font-size: 9vw;
+    text-align: center;
+    margin: 230px auto;
+}
+
+
+
+
+
 p {
     font-family: CopperplateLight, sans-serif;
     font-size: 18px;
@@ -275,7 +285,8 @@ section.main-module #fight-button {
 
 section.main-module #battle-buttons,
 section.main-module #log-screen,
-section.main-module #next-buttons {
+section.main-module #next-buttons,
+section.main-module #restart-button {
     display: none;
     opacity: 0;
     transition: opacity 0.5s;
