@@ -278,6 +278,7 @@ section.main-module #fight-button button {
     margin: 330px auto;
 }
 
+section.main-module,
 section.main-module #fight-button {
     opacity: 1;
     transition: opacity 0.5s;

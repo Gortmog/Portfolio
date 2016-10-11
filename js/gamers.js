@@ -9,6 +9,7 @@
 var main = function () {
     
     var charName;
+    var monsterName;
     var classIndex;
     var specIndex;
     var gamersData;
@@ -20,7 +21,7 @@ var main = function () {
     var player;
     var enemy;
     var locationName = "Grassland";
-    var hp_number = 0;
+    var hp_number = 1;
     
     //
     // GET_JSON_DATA
@@ -133,6 +134,12 @@ var main = function () {
         document.querySelector(".main-module > .container").style.backgroundImage = "url(" + env.image + ")";
         document.querySelector("#location-name").innerHTML = env.name;
         document.querySelector("#location-description").innerHTML = env.description;
+        document.querySelectorAll("#next-buttons > button")[0].innerHTML = "Go to " + env.direction_1;
+        document.querySelectorAll("#next-buttons > button")[1].innerHTML = "Go to " + env.direction_2;
+        if (env.direction_2 === "null") {
+            document.querySelectorAll("#next-buttons > button")[1].style.display = "none";
+        }
+        document.querySelector("#fight-button > button").addEventListener("click", StartFight);
     }
     
     //
@@ -222,11 +229,17 @@ var main = function () {
     // MAIN_CYCLE
     //
     
-    document.querySelector("#fight-button > button").addEventListener("click", StartFight);
+    
     
     function StartFight() {
         if (hp_number === 0) {
-            document.querySelector("#hp-button").className += " inactive-button";
+            document.querySelector("#hp-button").className = "btn battle-button inactive-button";
+            document.querySelector("#hp-button").removeEventListener("click", AttackEnemy);
+        } else {
+            document.querySelector("#hp-button").className = "btn battle-button";
+            document.querySelector("#hp-button").addEventListener("click", function() {
+                AttackEnemy(1);
+            });
         };
         document.querySelector("#fight-button").style.opacity = 0;
         setTimeout(function(){
@@ -241,46 +254,74 @@ var main = function () {
         var node = document.createElement("p");
         node.innerHTML = "Let the battle begin!";
         document.querySelector("#log-screen").appendChild(node);
-        document.querySelector("#attack-button").addEventListener("click", AttackEnemy);
+        document.querySelector("#attack-button").addEventListener("click", function() {
+                AttackEnemy(0);
+            });
+        document.querySelector("#fight-button > button").removeEventListener("click", StartFight);
     }
     
     var monster_turn = true;    // MONSTER ELIGIBILITY TO ATTACK
     
-    function AttackEnemy() {
+    function AttackEnemy(hp_use) {
         
-        // PLAYER ATTACKS
-                
-        var player_d20result = D20Roll(enemy.player_hit, player.crit);
-        var node = document.createElement("p");
-        node.innerHTML = player.name + " rolls " + player_d20result.number;
-        node.className += " player-text";
-        document.querySelector("#log-screen").appendChild(node);
-        if (player_d20result.outcome === "miss") {
+        var node;
+        
+        if (hp_use === 1) {
+            hp_number -= 1;
+            document.querySelector("#hp-number").innerHTML = hp_number;
+            var hp_regen = Math.floor(Math.random()*20+1);
+            player_current_HP += hp_regen;
+            player_current_HP = (player_current_HP <= player.maxHP) ? player_current_HP : player.maxHP;
+            document.querySelector("#player-current-hp").innerHTML = player_current_HP;
             node = document.createElement("p");
-            node.innerHTML = player.name + " misses " + enemy.name + ". Damn...";
+            node.innerHTML = player.name + " drinks a healing potion and regenerates " + player_d20result.number;
             node.className += " player-text";
             document.querySelector("#log-screen").appendChild(node);
         } else {
-            var player_damage = DamageRoll(player.damage);
-            if (player_d20result.outcome === "hit") {
+        
+            // PLAYER ATTACKS
+
+            var player_d20result = D20Roll(enemy.player_hit, player.crit);
+            var node = document.createElement("p");
+            node.innerHTML = player.name + " rolls " + player_d20result.number;
+            node.className += " player-text";
+            document.querySelector("#log-screen").appendChild(node);
+            if (player_d20result.outcome === "miss") {
                 node = document.createElement("p");
-                node.innerHTML = player.name + " " + player_d20result.outcome + "s " + enemy.name + " for " + player_damage + " damage. Nice.";
+                node.innerHTML = player.name + " misses " + enemy.name + ". Damn...";
                 node.className += " player-text";
                 document.querySelector("#log-screen").appendChild(node);
-            } else if (player_d20result.outcome === "crit") {
-                node = document.createElement("p");
-                node.innerHTML = player.name + " " + player_d20result.outcome + "s " + enemy.name + " for " + player_damage*2 + " damage. BOOM!";
-                node.className += " player-text";
-                document.querySelector("#log-screen").appendChild(node);
+            } else {
+                var player_damage = DamageRoll(player.damage);
+                if (player_d20result.outcome === "hit") {
+                    node = document.createElement("p");
+                    node.innerHTML = player.name + " " + player_d20result.outcome + "s " + enemy.name + " for " + player_damage + " damage. Nice.";
+                    node.className += " player-text";
+                    document.querySelector("#log-screen").appendChild(node);
+                } else if (player_d20result.outcome === "crit") {
+                    node = document.createElement("p");
+                    node.innerHTML = player.name + " " + player_d20result.outcome + "s " + enemy.name + " for " + player_damage*2 + " damage. BOOM!";
+                    node.className += " player-text";
+                    document.querySelector("#log-screen").appendChild(node);
+                }
             }
+            enemy_current_HP -= player_damage || 0;
+            document.querySelector("#monster-current-hp").innerHTML = ((enemy_current_HP >= 0) ? enemy_current_HP : "0");
+            if (enemy_current_HP <= 0) {
+                enemy_current_HP = 0;
+                Death("enemy");
+                var next_direction = document.querySelectorAll("#next-buttons > button");
+                for (var i = 0; i < next_direction.length; i++) {
+                    (function(index){
+                        next_direction[index].onclick = function(){
+                            locationName = next_direction[index].innerHTML.slice(6);
+                            ContinueJorney();
+                        };   
+                    })(i);
+                }
+                return;
+            }   
         }
-        enemy_current_HP -= player_damage || 0;
-        document.querySelector("#monster-current-hp").innerHTML = ((enemy_current_HP >= 0) ? enemy_current_HP : "0");
-        if (enemy_current_HP <= 0) {
-            enemy_current_HP = 0;
-            Death("player");
-            return;
-        }   
         
         // MONSTER ATTACKS
         
@@ -310,7 +351,8 @@ var main = function () {
                 document.querySelector("#player-current-hp").innerHTML = ((player_current_HP >= 0) ? player_current_HP : "0");
                 if (player_current_HP <= 0) {
                     player_current_HP = 0;
-                    Death("enemy");
+                    Death("player");
+                    document.querySelector("#restart-button > button").addEventListener("click", RestartJourney);
                     return;
                 }   
                 
@@ -327,11 +369,11 @@ var main = function () {
         var j;
         var final_text;
         var next_content;
-        if (subject === "player") {
+        if (subject === "enemy") {
             j = 1;
             final_text = "YOU WIN";
             next_content = "#next-buttons";
-        } else if (subject === "enemy") {
+        } else if (subject === "player") {
             j = 0;
             final_text = "GAME OVER";
             next_content = "#restart-button";
@@ -350,6 +392,41 @@ var main = function () {
             setTimeout(function(){
                 document.querySelector(next_content).style.opacity = 1;
             }, 100);
+        }, 500);
+    }
+    
+    function ContinueJorney() {
+        document.querySelector(".main-module").style.opacity = 0;
+        setTimeout(function(){
+            CreateLocation();
+            CreateMonster();
+            document.querySelector("#log-screen").style.display = "none";
+            document.querySelector("#log-screen").innerHTML = "";
+            document.querySelector(".battle-buttons").style.display = "none";
+            document.querySelector(".battle-buttons").style.opacity = 0;
+            document.querySelector("#next-buttons").style.display = "none";
+            document.querySelector("#fight-button").style.display = "block";
+            document.querySelector("#fight-button").style.opacity = 1;
+            document.querySelector(".main-module").style.opacity = 1;
+        }, 500);
+    }
+    
+    function RestartJourney() {
+        document.querySelector(".main-module").style.opacity = 0;
+        setTimeout(function(){
+            document.querySelector("#log-screen").style.display = "none";
+            document.querySelector("#log-screen").innerHTML = "";
+            document.querySelector(".battle-buttons").style.display = "none";
+            document.querySelector(".battle-buttons").style.opacity = 0;
+            document.querySelector("#next-buttons").style.display = "none";
+            document.querySelector("#fight-button").style.display = "block";
+            document.querySelector("#fight-button").style.opacity = 1;
+            document.querySelector(".main-module").style.display = "none";
+            document.querySelector(".main-module").style.opacity = 1;
+            document.querySelector(".start").style.display = "block";
+            document.querySelector("#restart-button").style.display = "none";
+            document.querySelector("#restart-button").style.opacity = 0;
+            locationName = "Grassland";
         }, 500);
     }
     
