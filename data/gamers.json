@@ -83,56 +83,56 @@
     "monsters": [
         {
             "monster_name": "Goblin",
-            "hp": "5",
+            "hp": "15",
             "hit_mark": "3",
             "damage": "1d3",
             "image": "../media/Goblin.png"
         }, 
         {
             "monster_name": "Troll",
-            "hp": "15",
+            "hp": "25",
             "hit_mark": "4",
             "damage": "1d6",
             "image": "../media/Troll.png"
         },
         {
             "monster_name": "Skeleton",
-            "hp": "5",
+            "hp": "15",
             "hit_mark": "3",
             "damage": "1d3",
             "image": "../media/Skeleton.png"
         },
         {
             "monster_name": "Zombie",
-            "hp": "10",
+            "hp": "20",
             "hit_mark": "3",
             "damage": "1d4",
             "image": "../media/Zombie.png"
         },
         {
             "monster_name": "Thug",
-            "hp": "10",
+            "hp": "20",
             "hit_mark": "3",
             "damage": "1d4",
             "image": "../media/Thug.png"
         },
         {
             "monster_name": "Knight",
-            "hp": "20",
+            "hp": "30",
             "hit_mark": "4",
             "damage": "1d6",
             "image": "../media/Knight.png"
         },
         {
             "monster_name": "Murloc",
-            "hp": "5",
+            "hp": "15",
             "hit_mark": "3",
             "damage": "1d3",
             "image": "../media/Murloc.png"
         },
         {
             "monster_name": "Orc",
-            "hp": "10",
+            "hp": "20",
             "hit_mark": "3",
             "damage": "1d4",
             "image": "../media/Orc.png"
@@ -141,7 +141,7 @@
             "monster_name": "The Shadow",
             "hp": "50",
             "hit_mark": "5",
-            "damage": "2d4",
+            "damage": "2d6",
             "image": "../media/The_Shadow.png"
         }
     ],
