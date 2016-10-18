@@ -230,7 +230,49 @@ var main = function () {
     // MAIN_CYCLE
     //
     
+    function logRecord(subject, object) {
+        
+        var class_name;
+        var log_emo;
+        
+        if (subject === "player") {
+            class_name = " player-text";
+            log_emo = {
+                miss: ". Damn...",
+                hit: ". Nice.",
+                crit: ". BOOM!"
+            }    
+        } else if (subject === "enemy") {
+            class_name = " monster-text";
+            log_emo = {
+                miss: ". Phew! That was close!",
+                hit: ". Ouch!",
+                crit: " "
+            } 
+        }
+        
+        return function (result, damage) {
+            var ending;
+            var inner_HTML;
+            if (result === "miss") {
+                ending = "es";
+                inner_HTML = subject.name + " " + result + " " + ending + " " + object.name + log_emo.result;
+            } else { 
+                ending = "s";
+                inner_HTML = subject.name + " " + result + " " + ending + " " + object.name + " for " + damage + " damage" + log_emo.result;
+            }
+            //var node = document.createElement("p");
+           // node.innerHTML = inner_HTML;
+           // node.className += class_name;
+           // document.querySelector("#log-screen").appendChild(node);
+           console.log(inner_HTML);
+        }   
+    }   
     
+    
+    //
+    // MAIN_CYCLE
+    //
     
     function startFight() {
         
@@ -279,8 +321,6 @@ var main = function () {
         
         var monster_turn = true;    // MONSTER ELIGIBILITY TO ATTACK
 
-        var node;
-
         // PLAYER DRINKS PORION
 
         function drinkHP() {
@@ -305,7 +345,7 @@ var main = function () {
 
         function attackEnemy() {
             var player_d20result = d20Roll(enemy.player_hit, player.crit);
-            var node = document.createElement("p");
+            node = document.createElement("p");
             node.innerHTML = player.name + " rolls " + player_d20result.number;
             node.className += " player-text";
             document.querySelector("#log-screen").appendChild(node);
