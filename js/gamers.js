@@ -21,7 +21,8 @@ var main = function () {
     var player;
     var enemy;
     var locationName = "Grassland";
-    var hp_number = 5;
+    var start_hp_number = 5;
+    var hp_number = start_hp_number;
     
     //
     // GET_JSON_DATA
@@ -230,42 +231,62 @@ var main = function () {
     // MAIN_CYCLE
     //
     
-    function logRecord(subject, object) {
-        
+    function logRecord(subject, object, descr) {
         var class_name;
         var log_emo;
-        
-        if (subject === "player") {
+        if (subject === player) {
             class_name = " player-text";
             log_emo = {
                 miss: ". Damn...",
                 hit: ". Nice.",
                 crit: ". BOOM!"
             }    
-        } else if (subject === "enemy") {
+        } else if (subject === enemy) {
             class_name = " monster-text";
             log_emo = {
                 miss: ". Phew! That was close!",
                 hit: ". Ouch!",
                 crit: " "
             } 
+        } else if (subject === "neutral") {
+            var node = document.createElement("p");
+            node.innerHTML = descr;
+            node.className += " ";
+            document.querySelector("#log-screen").appendChild(node);
+            return;
+        } else if (subject === "finish") {
+            var node = document.createElement("h3");
+            node.innerHTML = descr;
+            node.className += " gameover";
+            document.querySelector("#log-screen").appendChild(node);
+            return;
         }
-        
+        if (object === "continue") {
+            var node = document.createElement("p");
+            node.innerHTML = descr;
+            node.className += class_name;
+            document.querySelector("#log-screen").appendChild(node);
+            return;
+        }
         return function (result, damage) {
             var ending;
             var inner_HTML;
-            if (result === "miss") {
+            var node = document.createElement("p");
+            inner_HTML = subject.name + " rolls " + result.number;
+            node.innerHTML = inner_HTML;
+            node.className += class_name;
+            document.querySelector("#log-screen").appendChild(node);
+            if (result.outcome === "miss") {
                 ending = "es";
-                inner_HTML = subject.name + " " + result + " " + ending + " " + object.name + log_emo.result;
+                inner_HTML = subject.name + " " + result.outcome + ending + " " + object.name + log_emo[result.outcome];
             } else { 
                 ending = "s";
-                inner_HTML = subject.name + " " + result + " " + ending + " " + object.name + " for " + damage + " damage" + log_emo.result;
+                inner_HTML = subject.name + " " + result.outcome + ending + " " + object.name + " for " + damage + " damage" + log_emo[result.outcome];
             }
-            //var node = document.createElement("p");
-           // node.innerHTML = inner_HTML;
-           // node.className += class_name;
-           // document.querySelector("#log-screen").appendChild(node);
-           console.log(inner_HTML);
+           node = document.createElement("p");
+           node.className += class_name;
+           node.innerHTML = inner_HTML;
+           document.querySelector("#log-screen").appendChild(node);
         }   
     }   
     
@@ -275,6 +296,9 @@ var main = function () {
     //
     
     function startFight() {
+        
+        var playerLogRec = logRecord(player, enemy);
+        var enemyLogRec = logRecord(enemy, player);
         
         function drinkPotion(event) {
             drinkHP();
@@ -311,9 +335,7 @@ var main = function () {
                 document.querySelector("#battle-buttons").style.opacity = 1;
             }, 100);
         }, 500);
-        var node = document.createElement("p");
-        node.innerHTML = "Let the battle begin!";
-        document.querySelector("#log-screen").appendChild(node);
+        logRecord("neutral", null, "Let the battle begin!");
         document.querySelector("#attack-button").addEventListener("click", attackNow);
         document.querySelector("#fight-button > button").removeEventListener("click", startFight);
         
@@ -321,7 +343,7 @@ var main = function () {
         
         var monster_turn = true;    // MONSTER ELIGIBILITY TO ATTACK
 
-        // PLAYER DRINKS PORION
+        // PLAYER DRINKS POTION
 
         function drinkHP() {
             hp_number -= 1;
@@ -331,10 +353,8 @@ var main = function () {
             player_current_HP += hp_regen;
             player_current_HP = (player_current_HP <= player.maxHP) ? player_current_HP : player.maxHP;
             document.querySelector("#player-current-hp").innerHTML = player_current_HP;
-            node = document.createElement("p");
-            node.innerHTML = player.name + " drinks a healing potion and regenerates " + real_hp_regen + " health.";
-            node.className += " player-text";
-            document.querySelector("#log-screen").appendChild(node);
+            var description = player.name + " drinks a healing potion and regenerates " + real_hp_regen + " health.";
+            logRecord(player, "continue", description);
             if (hp_number == 0) {
                 document.querySelector("#hp-button").className = "btn battle-button inactive-button";
                 document.querySelector("#hp-button").removeEventListener("click", drinkPotion);
@@ -345,31 +365,12 @@ var main = function () {
 
         function attackEnemy() {
             var player_d20result = d20Roll(enemy.player_hit, player.crit);
-            node = document.createElement("p");
-            node.innerHTML = player.name + " rolls " + player_d20result.number;
-            node.className += " player-text";
-            document.querySelector("#log-screen").appendChild(node);
-            if (player_d20result.outcome === "miss") {
-                node = document.createElement("p");
-                node.innerHTML = player.name + " misses " + enemy.name + ". Damn...";
-                node.className += " player-text";
-                document.querySelector("#log-screen").appendChild(node);
-            } else {
-                var player_damage = damageRoll(player.damage);
-                if (player_d20result.outcome === "hit") {
-                    node = document.createElement("p");
-                    node.innerHTML = player.name + " " + player_d20result.outcome + "s " + enemy.name + " for " + player_damage + " damage. Nice.";
-                    node.className += " player-text";
-                    document.querySelector("#log-screen").appendChild(node);
-                } else if (player_d20result.outcome === "crit") {
+            var player_damage = (player_d20result.outcome !== "miss") ? damageRoll(player.damage) : 0;
+            if (player_d20result.outcome === "crit") {
                     player_damage = player_damage*2;
-                    node = document.createElement("p");
-                    node.innerHTML = player.name + " " + player_d20result.outcome + "s " + enemy.name + " for " + player_damage + " damage. BOOM!";
-                    node.className += " player-text";
-                    document.querySelector("#log-screen").appendChild(node);
-                }
-            }
-            enemy_current_HP -= player_damage || 0;
+                };
+            playerLogRec(player_d20result, player_damage);
+            enemy_current_HP -= player_damage;
             document.querySelector("#monster-current-hp").innerHTML = ((enemy_current_HP >= 0) ? enemy_current_HP : "0");
             if (enemy_current_HP <= 0) {
                 enemy_current_HP = 0;
@@ -377,6 +378,7 @@ var main = function () {
                 if (enemy_current_HP > 0) {
                     return;
                 }
+                document.querySelector("#restart-button > button").addEventListener("click", restartJourney);
                 var next_direction = document.querySelectorAll("#next-buttons > button");
                 for (var i = 0; i < next_direction.length; i++) {
                     (function(index){
@@ -401,24 +403,10 @@ var main = function () {
             }
             if (monster_turn) {
                 for (var i = 0; i <= (player.initiative / 2); i++) {    // CHECK MONSTER TURN FREQUENCY
-                    var enemy_d20result = d20Roll(player.monster_hit);    
-                    node = document.createElement("p");
-                    node.innerHTML = enemy.name + " rolls " + enemy_d20result.number;
-                    node.className += " monster-text";
-                    document.querySelector("#log-screen").appendChild(node);  
-                    if (enemy_d20result.outcome === "miss") {
-                        node = document.createElement("p");
-                        node.innerHTML = enemy.name + " misses " + player.name + ". Phew! That was close!";
-                        node.className += " monster-text";
-                        document.querySelector("#log-screen").appendChild(node);
-                    } else {
-                        var monster_damage = damageRoll(enemy.damage);
-                        node = document.createElement("p");
-                        node.innerHTML = enemy.name + " " + enemy_d20result.outcome + "s " + player.name + " for " + monster_damage + " damage. Ouch!";
-                        node.className += " monster-text";
-                        document.querySelector("#log-screen").appendChild(node);
-                    }
-                    player_current_HP -= monster_damage || 0;
+                    var enemy_d20result = d20Roll(player.monster_hit);  
+                    var monster_damage = (enemy_d20result.outcome !== "miss") ? damageRoll(enemy.damage) : 0;
+                    enemyLogRec(enemy_d20result, monster_damage);
+                    player_current_HP -= monster_damage;
                     document.querySelector("#player-current-hp").innerHTML = ((player_current_HP >= 0) ? player_current_HP : "0");
                     if (player_current_HP <= 0) {
                         player_current_HP = 0;
@@ -445,36 +433,33 @@ var main = function () {
                 final_text = "GAME OVER";
                 next_content = "#restart-button";
             }
+            document.querySelector("#attack-button").removeEventListener("click", attackNow);
+            document.querySelector("#hp-button").removeEventListener("click", drinkPotion);
             document.querySelectorAll(".portrait")[j].src = "../media/skull.png";
-            node = document.createElement("h3");
-            node.innerHTML = final_text;
-            node.className += " gameover";
             setTimeout(function(){
-                document.querySelector("#log-screen").appendChild(node);
+                logRecord("finish", null, final_text);
                 document.querySelector("#log-screen").scrollTop = document.querySelector("#log-screen").scrollHeight;
                 
                 // ASK PLAYER WETHER TO STAY & SEARCH OR JUST GO ON
                 
-                if (subject === "enemy") {
+                if ((subject === "enemy") && (enemy.name !== "The Shadow")) {
                     var answer = confirm("Do you want to stay for a while and search for anything useful?");
                     if (answer == true) {
                         var result = (Math.random() < 0.5) ? "new_enemy" : "new_potion";
                         if (result === "new_enemy") {
                             document.querySelector("#log-screen").innerHTML = "";
-                            node = document.createElement("p");
-                            node.innerHTML = "While " + player.name + " is searching for anything that could prove useful, another " + enemy.name + " approaches. God damn!";
-                            node.className += " ";
-                            document.querySelector("#log-screen").appendChild(node);
+                            var description = "While " + player.name + " is searching for anything that could prove useful, another " + enemy.name + " approaches. God damn!";
+                            logRecord(enemy, "continue", description);
                             enemy_current_HP = enemy.maxHP;
                             document.querySelector("#monster-current-hp").innerHTML = enemy_current_HP;
                             document.querySelectorAll(".portrait")[j].src = enemy.image;
+                            document.querySelector("#attack-button").addEventListener("click", attackNow);
+                            document.querySelector("#hp-button").addEventListener("click", drinkPotion);
                             return;
                         } else if (result === "new_potion") {
                             document.querySelector("#log-screen").innerHTML = "";
-                            node = document.createElement("p");
-                            node.innerHTML = player.name + " finds an untouched healing potion. Hell yeah!";
-                            node.className += " player-text";
-                            document.querySelector("#log-screen").appendChild(node);
+                            var description = player.name + " finds an untouched healing potion. Hell yeah!";
+                            logRecord(player, "continue", description);
                             hp_number += 1;
                             document.querySelector("#hp-number").innerHTML = hp_number;
                         }
@@ -483,15 +468,20 @@ var main = function () {
                 
                 // PREPARE FOR THE NEXT PART OF THE JOURNEY
                 
-                document.querySelector("#log-screen").style.overflowY = "hidden";
-                document.querySelector("#attack-button").removeEventListener("click", attackNow);
-                document.querySelector("#hp-button").removeEventListener("click", drinkPotion);
+//                document.querySelector("#log-screen").style.overflowY = "hidden";
                 document.querySelector("#battle-buttons").style.opacity = 0;
+                if ((subject === "enemy") && (enemy.name === "The Shadow")) {
+                    next_content = "#restart-button";
+                    document.querySelector("#log-screen").innerHTML = "";
+                    document.querySelector("#log-screen").style.opacity = 1;
+                    document.querySelector("#log-screen").style.backgroundImage = "url(../media/The_End.jpg)";
+                }
                 setTimeout(function(){
                     document.querySelector("#battle-buttons").style.display = "none";
                     document.querySelector(next_content).style.display = "block";
                     setTimeout(function(){
                         document.querySelector(next_content).style.opacity = 1;
+                        
                     }, 100);
                 }, 500);
             }, 1000);
@@ -534,6 +524,7 @@ var main = function () {
             document.querySelector("#restart-button").style.display = "none";
             document.querySelector("#restart-button").style.opacity = 0;
             locationName = "Grassland";
+            hp_number = start_hp_number;
         }, 500);
     }
     

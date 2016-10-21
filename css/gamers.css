@@ -24,7 +24,7 @@ and open the template in the editor.
 .gameover {
     font-size: 9vw;
     text-align: center;
-    margin: 230px auto;
+    margin: 235px auto;
 }
 
 
@@ -309,7 +309,21 @@ section.main-module #log-screen {
     width: 95%;
     height: 580px;
     margin: 20px auto;
+    background: center center no-repeat;
     background-color: black;
+    background-size: cover;
     overflow-y: auto;
     padding: 10px;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    
+    .gameover {
+        margin: 275px auto;
+    }
+
 }

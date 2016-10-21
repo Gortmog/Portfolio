@@ -262,7 +262,8 @@
             "monster": "The Shadow",
             "monster_number": "1",
             "image": "../media/12-Dark_Castle.jpg",
-            "description": ""            
+            "description": "",
+            "description_final": ""             
         }
     ]       
 }
