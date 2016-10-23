@@ -22,9 +22,9 @@ and open the template in the editor.
 }
 
 .gameover {
-    font-size: 9vw;
+    font-size: 8vw;
     text-align: center;
-    margin: 235px auto;
+    margin: 255px auto;
 }
 
 
@@ -319,6 +319,13 @@ section.main-module #log-screen {
 
 
 
+@media (max-width: 992px) {
+    
+    .gameover {
+        margin: 265px auto;
+    }
+
+}
 
 @media (max-width: 768px) {
     

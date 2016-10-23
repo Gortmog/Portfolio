@@ -162,6 +162,15 @@ var main = function () {
         this.spec_img = gamers_data.heroes[classIndex].specs[specIndex].spec_image;
     }
     
+    Character.prototype = {
+        d20result: function() {
+            return d20Roll(enemy.player_hit, player.crit);
+        },
+        damageResult: function() {
+            return damageRoll(player.damage);
+        }
+    };
+       
     //
     // LOCATION_CONSTRUCTOR
     //
@@ -195,6 +204,15 @@ var main = function () {
             }
         }
     }
+    
+    Monster.prototype = {
+        d20result: function() {
+            return d20Roll(player.monster_hit);
+        },
+        damageResult: function() {
+            return damageRoll(enemy.damage);
+        }
+    };    
     
     //
     // DICE_ROLLS
@@ -364,13 +382,13 @@ var main = function () {
         // PLAYER ATTACKS
 
         function attackEnemy() {
-            var player_d20result = d20Roll(enemy.player_hit, player.crit);
-            var player_damage = (player_d20result.outcome !== "miss") ? damageRoll(player.damage) : 0;
+            var player_d20result = player.d20result();
+            var player_damageResult = (player_d20result.outcome !== "miss") ? player.damageResult() : 0;
             if (player_d20result.outcome === "crit") {
-                    player_damage = player_damage*2;
+                    player_damageResult = player_damageResult*2;
                 };
-            playerLogRec(player_d20result, player_damage);
-            enemy_current_HP -= player_damage;
+            playerLogRec(player_d20result, player_damageResult);
+            enemy_current_HP -= player_damageResult;
             document.querySelector("#monster-current-hp").innerHTML = ((enemy_current_HP >= 0) ? enemy_current_HP : "0");
             if (enemy_current_HP <= 0) {
                 enemy_current_HP = 0;
@@ -403,10 +421,10 @@ var main = function () {
             }
             if (monster_turn) {
                 for (var i = 0; i <= (player.initiative / 2); i++) {    // CHECK MONSTER TURN FREQUENCY
-                    var enemy_d20result = d20Roll(player.monster_hit);  
-                    var monster_damage = (enemy_d20result.outcome !== "miss") ? damageRoll(enemy.damage) : 0;
-                    enemyLogRec(enemy_d20result, monster_damage);
-                    player_current_HP -= monster_damage;
+                    var enemy_d20result = enemy.d20result();  
+                    var enemy_damageResult = (enemy_d20result.outcome !== "miss") ? enemy.damageResult() : 0;
+                    enemyLogRec(enemy_d20result, enemy_damageResult);
+                    player_current_HP -= enemy_damageResult;
                     document.querySelector("#player-current-hp").innerHTML = ((player_current_HP >= 0) ? player_current_HP : "0");
                     if (player_current_HP <= 0) {
                         player_current_HP = 0;
@@ -454,7 +472,9 @@ var main = function () {
                             document.querySelector("#monster-current-hp").innerHTML = enemy_current_HP;
                             document.querySelectorAll(".portrait")[j].src = enemy.image;
                             document.querySelector("#attack-button").addEventListener("click", attackNow);
-                            document.querySelector("#hp-button").addEventListener("click", drinkPotion);
+                            if (hp_number > 0) {
+                                document.querySelector("#hp-button").addEventListener("click", drinkPotion);
+                            }
                             return;
                         } else if (result === "new_potion") {
                             document.querySelector("#log-screen").innerHTML = "";

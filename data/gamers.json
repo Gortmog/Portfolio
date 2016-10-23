@@ -15,7 +15,7 @@
                 {
                     "spec_name": "Axeman",
                     "weapon": "axe",
-                    "damage": "1d12",
+                    "damage": "2d8",
                     "crit_mark": "16",
                     "turn_frequency": "2",
                     "spec_image": "../media/warrior_axe.png"
@@ -39,7 +39,7 @@
                 {
                     "spec_name": "Firemage",
                     "weapon": "fireball",
-                    "damage": "3d4",
+                    "damage": "4d4",
                     "crit_mark": "17",
                     "turn_frequency": "2",
                     "spec_image": "../media/mage_fire.png"
