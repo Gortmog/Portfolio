@@ -172,7 +172,7 @@
             "monster": "Murloc",
             "monster_number": "1",
             "image": "../media/2-River.jpg",
-            "description": "Early morning you pack your belongings and leave the inn. The weather is great and you are in very uprising mood. The first part of your route to the south lies through the vast green grassland. </br>      In the afternoon you eat your lunch and continue your journey. Suddenly you notice an old cart with no horse near it. You approach with caution and spot a body of a farmer. You kneel down but the body rapidly gets up. It turns to be a thug that was waiting for a jorneyman. </br>      But you are no ordinary jorneyman! You are prepared for the fight!"                        
+            "description": "That was a nice fight after all. Your first fight on your way to become a great hero. <br>  The sun is in its highest point. You approach the bank of a river. A nice place to take some afternoon rest and refill your water supply. You put down your belongings and get to the shallow waters. Suddenly, some ugly creature jumps in front of you from the high reeds. You recognize it from the book your granny was reading you when you were a child. Murloc... A nasty creature that kills and eats everyone who comes to its habitat. Time to end its miserable life!"                        
         },
         {
             "location_name": "Watermill",
@@ -181,7 +181,7 @@
             "monster": "Orc",
             "monster_number": "1",
             "image": "../media/3-Watermill.jpg",
-            "description": ""            
+            "description": "That was a nice fight after all. Your first fight on your way to become a great hero. <br>  You try to stick to the road and after several hours of the lonely journey you notice an old watermill. As you approach you can see the signs of a recent pillage. Everything is destroyed. Dead bodies are all over the place. As you take a rusty axe from one of the dead you realize that it doesn't belong to human. It's orcish! Damned creatures! Suddenly you hear something from the building not far from you. You prepare to the fight and run inside. You have to kill at least one of them!"            
         },
         {
             "location_name": "Lonely mountain",
@@ -190,7 +190,7 @@
             "monster": "Goblin",
             "monster_number": "1",
             "image": "../media/4-Lonely_Mountain.jpg",
-            "description": ""            
+            "description": "Murlocs. At least they were shortened in numbers today. So much slime on them. How could nature create something so disgusting? <br>    You decide to go to the mountain on the south-east. Maybe you can find some safe place to rest in the evening you reach the mountain's slope. You notice a nice crag that can surely hide you from the wind. You approach it and prepare for a good sleep. <br> You sleep is disturbed by some niose. You slowly open your eyes. Ah, a goblin is trying to steal your belongings. Now it's time to teach the little bastard a lesson!"            
         },
         {
             "location_name": "Abandoned village",

@@ -48,19 +48,19 @@ span, button, h1 {
     SECTION.START
 */
 
-section.start {
+#start {
     padding-top: 70px;
 }
 
-section.start .container > img {
+#start .container > img {
     margin: 0 auto;
 }
 
-section.start .container > p {
+#start .container > p {
     text-indent: 30px;
 }
     
-section.start h1 {
+#start h1 {
     text-align: center;
     margin: 20px auto 0 auto;
     font-family: Copperplate, sans-serif;
@@ -69,15 +69,15 @@ section.start h1 {
     text-shadow: 2px 2px 2px #333;
 }
 
-section.start h3{
+#start h3{
     text-align: center;
 }
 
-section.start li img {
+#start li img {
     width: 40px;
 }
 
-section.start button {
+#start button {
     display: block;
     margin: 30px auto;
     font-size: 35px;
@@ -87,83 +87,83 @@ section.start button {
     SECTION.INTRO
 */
 
-section.intro {
+#intro {
     margin-top: 52px;
     display: none;
     text-shadow: 1px 1px black;
 }
 
-section.intro .container {
+#intro .container {
     background: url("../media/0-Inn.jpg") center no-repeat;
     background-size: cover;
     border-radius: 0px;
     color: #fff;
 }
 
-section.intro .char-class-img {
+#intro .char-class-img {
     height: 100px;
 }
 
-section.intro .char-spec-img {
+#intro .char-spec-img {
     height: 40px;
 }
 
-section.intro .hp {
+#intro .hp {
     height: 25px;
 }
 
-section.intro img,
-section.intro .row h3,
-section.intro .row h4,
-section.intro .row p {
+#intro img,
+#intro .row h3,
+#intro .row h4,
+#intro .row p {
     display: inline;
 }
 
-section.intro .col-xs-6 {
+#intro .col-xs-6 {
     padding: 0px 4px;
 }
 
-section.intro .row {
+#intro .row {
     text-align: center;
 }
 
-section.intro .container > .row {
+#intro .container > .row {
     background-color: rgba(100, 100, 100, 0.5);
 }
 
-section.intro ul {
+#intro ul {
     list-style-type: none;
     margin: 10px 0; 
     padding: 0;
 }
 
-section.intro li {
+#intro li {
     margin: 0; 
     padding: 0;
     font-size: 16px;
     font-family: Copperplate, sans-serif;
 }
 
-section.intro p {
+#intro p {
     text-indent: 30px;
     font-size: 20px;
     font-family: Copperplate, sans-serif;
 }
 
-section.intro .row p {
+#intro .row p {
     font-size: 16px;
     font-family: Copperplate, sans-serif;
 }
 
-section.intro .general-stats ul {
+#intro .general-stats ul {
     margin-left: 0;
 }
 
-section.intro button,
-section.intro button:hover,
-section.intro button:focus,
-section.intro button:active,
-section.intro button:focus:active {
+#intro button,
+#intro button:hover,
+#intro button:focus,
+#intro button:active,
+#intro button:focus:active {
     background-color: #264d73;
     color: #fff;
     outline: none;
@@ -173,27 +173,27 @@ section.intro button:focus:active {
     margin-bottom: 5px;
 }
 
-section.intro span {
+#intro span {
     font-style: italic;
 }
 
-section.intro input {
+#intro input {
     background-color: rgba(100, 100, 100, 0.8);
     font-family: Copperplate, sans-serif;
     color: #aaa;
 }
 
-section.intro input,
-section.intro input:focus,
-section.intro input:active {
+#intro input,
+#intro input:focus,
+#intro input:active {
     outline: none;
 }
 
-section.intro .char-name,
-section.intro .char-name:hover,
-section.intro .char-name:focus,
-section.intro .char-name:active,
-section.intro .char-name:focus:active {
+#intro #char-name,
+#intro #char-name:hover,
+#intro #char-name:focus,
+#intro #char-name:active,
+#intro #char-name:focus:active {
     background-color: #fff;
     color: #000;
     outline: none;
@@ -207,64 +207,64 @@ section.intro .char-name:focus:active {
     SECTION.MAIN-MODULE
 */
 
-section.main-module {
+#main-module {
     margin-top: 52px;
     display: none;
     text-shadow: 1px 1px black;
 }
 
-section.main-module .container {
+#main-module .container {
     background: url("../media/0-Inn.jpg") center no-repeat;
     background-size: cover;
     border-radius: 0px;
     color: #fff;
 }
 
-section.main-module .info-part {
+#main-module .info-part {
     display: inline;
     padding: 0 5px;
 }
 
-section.main-module .col-xs-12 {
+#main-module .col-xs-12 {
     padding: 0;
 }
 
-section.main-module #player-info .row,
-section.main-module #monster-info .row {
+#main-module #player-info .row,
+#main-module #monster-info .row {
     padding: 0 10px;
 }
 
-section.main-module img.portrait{
+#main-module img.portrait{
     height: 75px;
     text-align: center;
 }
 
-section.main-module h2{
+#main-module h2{
     margin: 5px auto;
 }
 
-section.main-module .regalia img,
-section.main-module .regalia p {
+#main-module .regalia img,
+#main-module .regalia p {
     display: inline;
 }
 
-section.main-module .regalia > img{
+#main-module .regalia > img{
     height: 25px;
 }
 
-section.main-module img:nth-child(5) {
+#main-module img:nth-child(5) {
     margin-left: 10px;
 }
 
-section.main-module .battle-buttons {
+#main-module .battle-buttons {
     text-align: center;
 }
 
-section.main-module button,
-section.main-module button:hover,
-section.main-module button:focus,
-section.main-module button:active,
-section.main-module button:focus:active {
+#main-module button,
+#main-module button:hover,
+#main-module button:focus,
+#main-module button:active,
+#main-module button:focus:active {
     background-color: #444;
     color: #fff;
     outline: none;
@@ -274,38 +274,38 @@ section.main-module button:focus:active {
     margin: 20px 20px;    
 }
 
-section.main-module #fight-button button {
+#main-module #fight-button button {
     margin: 330px auto;
 }
 
-section.main-module,
-section.main-module #fight-button {
+#main-module,
+#main-module #fight-button {
     opacity: 1;
     transition: opacity 0.5s;
 }
 
-section.main-module #battle-buttons,
-section.main-module #log-screen,
-section.main-module #next-buttons,
-section.main-module #restart-button {
+#main-module #battle-buttons,
+#main-module #log-screen,
+#main-module #next-buttons,
+#main-module #restart-button {
     display: none;
     opacity: 0;
     transition: opacity 0.5s;
 }
 
-section.main-module #fight-button img, 
-section.main-module #battle-buttons img{
+#main-module #fight-button img, 
+#main-module #battle-buttons img{
     height: 30px;
 }
 
-section.main-module p {
+#main-module p {
     text-indent: 30px;
     font-size: 20px;
     font-family: Copperplate, sans-serif;
     white-space: pre-wrap;
 }
 
-section.main-module #log-screen {
+#main-module #log-screen {
     width: 95%;
     height: 580px;
     margin: 20px auto;

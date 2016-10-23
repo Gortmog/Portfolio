@@ -51,11 +51,11 @@ var main = function () {
     // GAME_INTRO
     //
     
-    document.querySelector(".start-game").addEventListener("click", startGame);
+    document.querySelector("#start-game").addEventListener("click", startGame);
 
     function startGame() {
-        document.querySelector(".start").style.display = "none";
-        document.querySelector(".intro").style.display = "block";
+        document.querySelector("#start").style.display = "none";
+        document.querySelector("#intro").style.display = "block";
         load();
     }
     
@@ -65,14 +65,14 @@ var main = function () {
         document.querySelector("input").value = "";
     }
     
-    document.querySelector(".char-name").addEventListener("click", enterName);
+    document.querySelector("#char-name").addEventListener("click", enterName);
     
     function enterName() {
         if ((document.querySelector("input").value !== "") && (document.querySelector("input").value !== "Enter your name...")) {
             char_name = document.querySelector("input").value;
             document.querySelector("input").style.display = "none";
-            document.querySelector(".char-name").style.display = "none";
-            document.querySelectorAll(".intro span")[0].innerHTML = char_name;
+            document.querySelector("#char-name").style.display = "none";
+            document.querySelectorAll("#intro span")[0].innerHTML = char_name;
         }
     }
     
@@ -101,8 +101,8 @@ var main = function () {
     }
     
     function startJourney() {
-        document.querySelector(".intro").style.display = "none";
-        document.querySelector(".main-module").style.display = "block";
+        document.querySelector("#intro").style.display = "none";
+        document.querySelector("#main-module").style.display = "block";
         createLocation();
         createCharacter();
         createMonster();
@@ -113,7 +113,7 @@ var main = function () {
         player_max_HP = player.maxHP;
         player_current_HP = player_max_HP;
         document.querySelectorAll(".portrait")[0].src = player.spec_img;
-        document.querySelectorAll(".main-module h2")[0].innerHTML = player.name;
+        document.querySelectorAll("#main-module h2")[0].innerHTML = player.name;
         document.querySelector("#player-max-hp").innerHTML = player_max_HP;
         document.querySelector("#player-current-hp").innerHTML = player_current_HP;
         document.querySelector("#hp-number").innerHTML = hp_number;
@@ -124,7 +124,7 @@ var main = function () {
         enemy_max_HP = enemy.maxHP;
         enemy_current_HP = enemy_max_HP;
         document.querySelectorAll(".portrait")[1].src = enemy.image;
-        document.querySelectorAll(".main-module h2")[1].innerHTML = enemy.name;
+        document.querySelectorAll("#main-module h2")[1].innerHTML = enemy.name;
         document.querySelector("#monster-max-hp").innerHTML = enemy_max_HP;
         document.querySelector("#monster-current-hp").innerHTML = enemy_current_HP;
     }
@@ -132,7 +132,7 @@ var main = function () {
     function createLocation() {
         env = new Location(locationName);
         monster_name = env.monster;
-        document.querySelector(".main-module > .container").style.backgroundImage = "url(" + env.image + ")";
+        document.querySelector("#main-module > .container").style.backgroundImage = "url(" + env.image + ")";
         document.querySelector("#location-name").innerHTML = env.name;
         document.querySelector("#location-description").innerHTML = env.description;
         document.querySelectorAll("#next-buttons > button")[0].innerHTML = "Go to " + env.direction_1;
@@ -258,14 +258,14 @@ var main = function () {
                 miss: ". Damn...",
                 hit: ". Nice.",
                 crit: ". BOOM!"
-            }    
+            };    
         } else if (subject === enemy) {
             class_name = " monster-text";
             log_emo = {
                 miss: ". Phew! That was close!",
                 hit: ". Ouch!",
                 crit: " "
-            } 
+            }; 
         } else if (subject === "neutral") {
             var node = document.createElement("p");
             node.innerHTML = descr;
@@ -305,9 +305,8 @@ var main = function () {
            node.className += class_name;
            node.innerHTML = inner_HTML;
            document.querySelector("#log-screen").appendChild(node);
-        }   
+        };   
     }   
-    
     
     //
     // MAIN_CYCLE
@@ -513,7 +512,7 @@ var main = function () {
     }
     
     function continueJorney() {
-        document.querySelector(".main-module").style.opacity = 0;
+        document.querySelector("#main-module").style.opacity = 0;
         setTimeout(function(){
             createLocation();
             createMonster();
@@ -524,12 +523,12 @@ var main = function () {
             document.querySelector("#next-buttons").style.display = "none";
             document.querySelector("#fight-button").style.display = "block";
             document.querySelector("#fight-button").style.opacity = 1;
-            document.querySelector(".main-module").style.opacity = 1;
+            document.querySelector("#main-module").style.opacity = 1;
         }, 500);
     }
     
     function restartJourney() {
-        document.querySelector(".main-module").style.opacity = 0;
+        document.querySelector("#main-module").style.opacity = 0;
         setTimeout(function(){
             document.querySelector("#log-screen").style.display = "none";
             document.querySelector("#log-screen").innerHTML = "";
@@ -538,9 +537,9 @@ var main = function () {
             document.querySelector("#next-buttons").style.display = "none";
             document.querySelector("#fight-button").style.display = "block";
             document.querySelector("#fight-button").style.opacity = 1;
-            document.querySelector(".main-module").style.display = "none";
-            document.querySelector(".main-module").style.opacity = 1;
-            document.querySelector(".start").style.display = "block";
+            document.querySelector("#main-module").style.display = "none";
+            document.querySelector("#main-module").style.opacity = 1;
+            document.querySelector("#start").style.display = "block";
             document.querySelector("#restart-button").style.display = "none";
             document.querySelector("#restart-button").style.opacity = 0;
             locationName = "Grassland";
