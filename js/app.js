@@ -44,11 +44,11 @@ var main = function () {
        
     function SmallScreenCheck(){
         if ($("header #nav-icon").css("display") !== "none" ) {
-            $(".bike .first-p").after($(".bike .image"));
-            $(".ozzy .row").prepend($(".ozzy .ozzy-text"));
+            $("#bike #first-p").after($("#bike #bike-image"));
+            $("#ozzy .row").prepend($("#ozzy #ozzy-text"));
         } else {
-            $(".bike .image-default").append($(".bike .image"));
-            $(".ozzy .row").append($(".ozzy .ozzy-text"));
+            $("#bike #image-default").append($("#bike #bike-image"));
+            $("#ozzy .row").append($("#ozzy #ozzy-text"));
         }
     };  
     
@@ -94,7 +94,7 @@ var main = function () {
     var current_ozzy_img = 1;
     var total_ozzy_img = 6;
     
-    $(".next-button").click(function () {
+    $("#next-button").click(function () {
         current_ozzy_img++;
         if (current_ozzy_img > total_ozzy_img) {
             current_ozzy_img = 1;
@@ -102,7 +102,7 @@ var main = function () {
         HideImg();
     });
         
-    $(".prev-button").click(function () {
+    $("#prev-button").click(function () {
         current_ozzy_img--;
         if (current_ozzy_img < 1) {
             current_ozzy_img = total_ozzy_img;
@@ -111,54 +111,54 @@ var main = function () {
     });
     
     function HideImg(){
-        $(".ozzy img").css("opacity", "0");
+        $("#ozzy img").css("opacity", "0");
         setTimeout(ChangeAndShowImg, 700);
     };
     
     function ChangeAndShowImg(){
-        $(".ozzy img").attr("src", "../media/ozzy_" + current_ozzy_img + ".jpg");
-        $(".ozzy #img_main").css("opacity", "1");
+        $("#ozzy img").attr("src", "../media/ozzy_" + current_ozzy_img + ".jpg");
+        $("#ozzy #img_main").css("opacity", "1");
     };
     
     //
     //  OZZY_ZOOM
     //
     
-    $(".ozzy .photos").on("mouseenter", OzzyZoomMouseenter);
+    $("#ozzy .photos").on("mouseenter", OzzyZoomMouseenter);
     
     function OzzyZoomMouseenter(){
-        $(".ozzy #img_over").css("opacity", "1");
-        $(".ozzy #img_main").css("opacity", "0");
-        $(".ozzy .photos").on("mousemove", OzzyZoomMousemove);
-        $(".ozzy img").bind("mousewheel DOMMouseScroll", OzzyZoomScroll);
+        $("#ozzy #img_over").css("opacity", "1");
+        $("#ozzy #img_main").css("opacity", "0");
+        $("#ozzy .photos").on("mousemove", OzzyZoomMousemove);
+        $("#ozzy img").bind("mousewheel DOMMouseScroll", OzzyZoomScroll);
     };
     
-    $(".ozzy .photos").on("mouseleave", OzzyZoomMouseleave);
+    $("#ozzy .photos").on("mouseleave", OzzyZoomMouseleave);
     
     function OzzyZoomMouseleave(){
-        $(".ozzy img").css("transform", "scale(1)");
+        $("#ozzy img").css("transform", "scale(1)");
         total_resize = 1;
-        $(".ozzy #img_over").css("opacity", "0");
-        $(".ozzy #img_main").css("opacity", "1");
-        $(".ozzy .photos").off("mousemove");
-        $(".ozzy img").unbind("mousewheel DOMMouseScroll", OzzyZoomScroll);
+        $("#ozzy #img_over").css("opacity", "0");
+        $("#ozzy #img_main").css("opacity", "1");
+        $("#ozzy .photos").off("mousemove");
+        $("#ozzy img").unbind("mousewheel DOMMouseScroll", OzzyZoomScroll);
     };
 
     function OzzyZoomMousemove(event){
-        var ozzy_img_left = $(".ozzy #img_main").offset().left;
-        var ozzy_img_top = $(".ozzy #img_main").offset().top;
-        var ozzy_photos_left = $(".ozzy .photos").offset().left;
+        var ozzy_img_left = $("#ozzy #img_main").offset().left;
+        var ozzy_img_top = $("#ozzy #img_main").offset().top;
+        var ozzy_photos_left = $("#ozzy .photos").offset().left;
         var user_x = event.clientX;
         var user_y = event.clientY + $(window).scrollTop();
                 
         var ozzy_over_left = - user_x + (2 * ozzy_img_left) - ozzy_photos_left;
         var ozzy_over_top = - user_y + ozzy_img_top;
         
-        $(".ozzy #img_over").css("left", ozzy_over_left + "px");
-        $(".ozzy #img_over").css("top", ozzy_over_top + "px");        
+        $("#ozzy #img_over").css("left", ozzy_over_left + "px");
+        $("#ozzy #img_over").css("top", ozzy_over_top + "px");        
     };
  
-    var initial_height = parseInt($(".ozzy img").css("height"));
+    var initial_height = parseInt($("#ozzy img").css("height"));
     var total_resize = 1;
     
     function OzzyZoomScroll(event){
@@ -220,7 +220,7 @@ var main = function () {
     //  FAMILY_MODAL
     // 
 
-    $(".family img").click(FamilyModalShow);
+    $("#family img").click(FamilyModalShow);
     
     var current_family_img = 1;
     var total_family_img = 6;
@@ -271,7 +271,7 @@ var main = function () {
         }
     };    
 
-    $(".next-button-modal").on("click", NextClickModal);
+    $("#next-button-modal").on("click", NextClickModal);
     
     function NextClickModal() {
         current_family_img++;
@@ -281,7 +281,7 @@ var main = function () {
         HideImgModal();
     };
         
-    $(".prev-button-modal").on("click", PrevClickModal);
+    $("#prev-button-modal").on("click", PrevClickModal);
             
     function PrevClickModal() {
         current_family_img--;

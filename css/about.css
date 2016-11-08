@@ -34,29 +34,29 @@ section .mask {
     SECTION.FAMILY
 */
 
-section.family {
+#family {
     padding-top: 90px;
 }
 
-section.family .mask {
+#family .mask {
     overflow: hidden;
     padding: 25px 0;
 }
 
-section.family .photos {
+#family .photos {
     width: 4500px;
 }
 
-section.family .photos img {
+#family .photos img {
     height: 400px;
     transition: all 0.7s ease;
 }
 
-section.family .photos img:hover {
+#family .photos img:hover {
     cursor: pointer;
 } 
 
-section.family img:first-child {
+#family img:first-child {
     animation: carousel 60s linear infinite;
     animation-play-state: inherit;
 }
@@ -100,8 +100,8 @@ section.family img:first-child {
     color: #fff;
 }
 
-#familyModal .prev-button-modal,
-#familyModal .next-button-modal {
+#familyModal #prev-button-modal,
+#familyModal #next-button-modal {
     z-index: 9;
     position: absolute;
     top: 0px;
@@ -111,11 +111,11 @@ section.family img:first-child {
     transition: opacity 0.5s;
 }
 
-#familyModal .prev-button-modal {
+#familyModal #prev-button-modal {
     left: 0px;
 }
 
-#familyModal .next-button-modal {
+#familyModal #next-button-modal {
     right: 0px;
 }
 
@@ -137,29 +137,29 @@ section.family img:first-child {
     SECTION.OZZY
 */
 
-section.ozzy .mask {
+#ozzy .mask {
     position: relative;
     overflow: hidden;
     padding: 25px 0;
     z-index: 5;
 }
 
-section.ozzy .prev-button,
-section.ozzy .next-button {
+#ozzy #prev-button,
+#ozzy #next-button {
     z-index: 9;
     position: absolute;
     top: 43%;
 }
 
-section.ozzy .prev-button {
+#ozzy #prev-button {
     left: 0px;
 }
 
-section.ozzy .next-button {
+#ozzy #next-button {
     right: 0px;
 }
 
-section.ozzy .btn {
+#ozzy .btn {
     border-radius: 25px;
     height: 50px;
     width: 50px;
@@ -167,18 +167,18 @@ section.ozzy .btn {
     background-color: rgba(255, 255, 255, 0.5); 
 }
 
-section.ozzy .photos {
+#ozzy .photos {
     text-align: center;
     position: relative;
 }
 
-section.ozzy .photos #img_main {
+#ozzy .photos #img_main {
     height: 400px;
     position: relative;
     transition: opacity 1s;
 }
 
-section.ozzy .photos #img_over {
+#ozzy .photos #img_over {
     position: absolute;
     height: 800px;
     top: 0px;
@@ -191,32 +191,32 @@ section.ozzy .photos #img_over {
     SECTION.BIKE
 */
 
-section.bike {
+#bike {
     overflow: hidden;
 }
 
-section.bike .image {
+#bike #bike-image {
     text-align: center;
 }
 
-section.bike .image img {
+#bike #bike-image img {
     margin-top: 20px;
 }
     
-section.bike iframe {
+#bike iframe {
     height: 400px;
     width: 550px;
 }
 
-section.bike .video h3 {
+#bike #bike-video h3 {
     font-size: 20px
 }
 
-section.bike .animated-to-viewport {
+#bike .animated-to-viewport {
     transform: translate(500px,0);
 }
 
-section.bike .in-viewport {
+#bike .in-viewport {
     transform: translate(0,0);
 }
 
@@ -234,7 +234,7 @@ section.bike .in-viewport {
 
 @media (max-width: 1199px) {
     
-    section.bike iframe {
+    #bike iframe {
         height: 350px;
         width: 450px;
     }
@@ -247,7 +247,7 @@ section.bike .in-viewport {
         width: 95%;
     }
     
-    section.bike iframe {
+    #bike iframe {
         height: 260px;
         width: 330px;
     }
@@ -256,18 +256,18 @@ section.bike .in-viewport {
 
 @media (min-width: 768px) {
     
-    section.family .photos img:hover {
+    #family .photos img:hover {
         transform: scale(1.1);
         box-shadow: 0px 3px 3px #aaa;
     } 
     
-    section.family .photos:hover {
+    #family .photos:hover {
         animation-play-state: paused;
     } 
     
     
-    #familyModal .prev-button-modal:hover,
-    #familyModal .next-button-modal:hover {
+    #familyModal #prev-button-modal:hover,
+    #familyModal #next-button-modal:hover {
         cursor: pointer;
         opacity: 1;
     }
@@ -292,24 +292,24 @@ section.bike .in-viewport {
         margin: 0 auto;
     }    
     
-    section.family {
+    #family {
         padding-top: 80px;
     }
     
-    section.family .photos img {
+    #family .photos img {
         height: 300px;
     }   
 
-    #familyModal .prev-button-modal,
-    #familyModal .next-button-modal {
+    #familyModal #prev-button-modal,
+    #familyModal #next-button-modal {
         opacity: 1;
     }
         
-    section.bike .image img {
+    #bike #bike-image img {
         margin: 0 auto;
     }
     
-    section.bike .video {
+    #bike #bike-video {
         text-align: center;
     }
     
@@ -321,7 +321,7 @@ section.bike .in-viewport {
         font-size: 18px;
     }
     
-    section.ozzy .photos #img_main {
+    #ozzy .photos #img_main {
         height: 330px;
     }
 
