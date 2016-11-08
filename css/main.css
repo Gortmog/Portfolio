@@ -59,11 +59,8 @@ header {
 
 header #logo,
 header h3,
-header .nav-icon {
+header #nav-icon {
     display: inline-block;
-}
-
-header .info {
 }
 
 header #logo {
@@ -76,7 +73,7 @@ header h3 {
     margin: 13px;
 }
 
-header .nav-icon {
+header #nav-icon {
     margin: 10px;
     padding: 5px 6px 1px 6px;
     background-color: rgba(85,85,85,0);
@@ -84,7 +81,7 @@ header .nav-icon {
     border-radius: 3px;
 }
 
-header .nav-icon:hover {
+header #nav-icon:hover {
     cursor: pointer;
     border: 1px solid #444;
 }
@@ -98,7 +95,7 @@ header span {
     font-size: 18px;
 }
 
-header .navigation {
+header #navigation {
     margin-top: 6px;
 }
 
@@ -121,7 +118,7 @@ header .nav-pills li a:hover {
     BACK-TO-TOP
 */
 
-.back-to-top {
+#back-to-top {
     position: fixed;
     width: 130px;
     top: 0px;
@@ -136,8 +133,8 @@ header .nav-pills li a:hover {
 }
 
 
-.back-to-top button,
-.back-to-top button:focus {
+#back-to-top button,
+#back-to-top button:focus {
     width: 130px;
     outline: none;
     border: 1px solid #333;
@@ -146,9 +143,9 @@ header .nav-pills li a:hover {
     color: #fff;
 }
 
-.back-to-top button:focus,
-.back-to-top button:active,
-.back-to-top button:focus:active {
+#back-to-top button:focus,
+#back-to-top button:active,
+#back-to-top button:focus:active {
     outline: none;
 }
 
@@ -156,31 +153,31 @@ header .nav-pills li a:hover {
     SECTION.SHORT_INFO
 */
 
-section.short_info {
+#short_info {
     font-family: CopperplateLight, sans-serif;
 }
 
-section.short_info .my_img {
+#short_info #my_img {
     text-align: center;
     margin-top: 80px;
 }
 
-section.short_info img {
+#short_info img {
     display: inline-block;
     border-radius: 20px;
 }
 
-section.short_info .text {
+#short_info #text {
     margin-top: 90px;
     font-size: 18px;
 }
 
-section.short_info p {
+#short_info p {
     margin-top: -10px;
     text-indent: 30px;
 }
 
-section.short_info .btn {
+#short_info .btn {
     margin-bottom: 30px;
     font-family: Copperplate, sans-serif;
     font-weight: bold;
@@ -190,46 +187,46 @@ section.short_info .btn {
     SECTION.PROJECTS
 */
 
-section.projects .col-sm-6 {
+#projects .col-sm-6 {
     text-align: center;
 }
 
-section.projects img {
+#projects img {
     display: inline-block;
 }
 
-section.projects h1 {
+#projects h1 {
     font-family: CopperplateBold, sans-serif;
     font-size: 40px;
     margin-bottom: 50px;
 }
 
-section.projects .powered-by {
+#projects #powered-by {
     margin: 30px 0;
 }
 
-section.projects .powered-by h3, 
-section.projects .powered-by img {
+#projects #powered-by h3, 
+#projects #powered-by img {
     display: inline;
 }
 
-section.projects a:hover {
+#projects a:hover {
     text-decoration: none;
 }
 
-section.projects .powered-by img {
+#projects #powered-by img {
     width: 40px;
     margin-top: -10px;
     margin-left: 5px;
 }
 
-section.projects .powered-by h3 {
+#projects #powered-by h3 {
     font-size: 30px;
     color: #000;
     font-family: Copperplate, sans-serif;
 }
 
-section.projects a h1 {
+#projects a h1 {
     text-align: center;
     margin: 20px auto 0 auto;
     font-family: Copperplate, sans-serif;
@@ -274,21 +271,21 @@ footer p {
     color: #fff;
 }
 
-footer .copyright {
+footer #copyright {
     margin-top: 15px;
 }
 
 @media (min-width: 768px) {
-    header .navigation {
+    header #navigation {
         float: right;
         display: inline;
     }
     
-    header .nav-icon {
+    header #nav-icon {
         display: none;
     }
     
-    .back-to-top button:hover {
+    #back-to-top button:hover {
         border-color: #666;
         background-color: #fff;
         color: #000;
@@ -297,7 +294,7 @@ footer .copyright {
 
 @media (max-width: 767px) {
   
-    header .navigation {
+    header #navigation {
         margin-bottom: 5px;
         display: none;
     }
@@ -311,7 +308,7 @@ footer .copyright {
         float: none;
     }
     
-    .back-to-top button:hover {
+    #back-to-top button:hover {
         border-color: #333;
         background-color: #666;
         color: #fff;
@@ -326,13 +323,13 @@ footer .copyright {
 @media (max-width: 480px) {  
     
     header .container,
-    header .navigation,
+    header #navigation,
     header .nav-pills {
         width: 100%;
     }
         
     header .col-sm-6,
-    header .navigation,
+    header #navigation,
     header .nav-pills li {
         margin: 0;
         padding: 0;

@@ -12,10 +12,10 @@ and open the template in the editor.
     SECTION.PROJECTS
 */
 
-section.projects {
+#projects {
     padding-top: 80px;
 }
 
-section.projects .col-sm-12 {
+#projects .col-sm-12 {
     text-align: center;
 }

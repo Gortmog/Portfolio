@@ -139,6 +139,8 @@ var main = function () {
         document.querySelectorAll("#next-buttons > button")[1].innerHTML = "Go to " + env.direction_2;
         if (env.direction_2 === "null") {
             document.querySelectorAll("#next-buttons > button")[1].style.display = "none";
+        } else {
+            document.querySelectorAll("#next-buttons > button")[1].style.display = "inline";
         }
         document.querySelector("#fight-button > button").addEventListener("click", startFight);
         document.querySelector("#log-screen").style.overflowY = "auto";
@@ -185,6 +187,7 @@ var main = function () {
                 this.monster_number = gamers_data.locations[i].monster_number;
                 this.image = gamers_data.locations[i].image;
                 this.description = gamers_data.locations[i].description;
+                this.description_final = gamers_data.locations[i].description_final || "";
             }
         }        
     }
@@ -494,6 +497,7 @@ var main = function () {
                     document.querySelector("#log-screen").innerHTML = "";
                     document.querySelector("#log-screen").style.opacity = 1;
                     document.querySelector("#log-screen").style.backgroundImage = "url(../media/The_End.jpg)";
+                    document.querySelector("#location-description").innerHTML = env.description_final;
                 }
                 setTimeout(function(){
                     document.querySelector("#battle-buttons").style.display = "none";

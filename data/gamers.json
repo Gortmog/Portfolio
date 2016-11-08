@@ -172,7 +172,7 @@
             "monster": "Murloc",
             "monster_number": "1",
             "image": "../media/2-River.jpg",
-            "description": "That was a nice fight after all. Your first fight on your way to become a great hero. <br>  The sun is in its highest point. You approach the bank of a river. A nice place to take some afternoon rest and refill your water supply. You put down your belongings and get to the shallow waters. Suddenly, some ugly creature jumps in front of you from the high reeds. You recognize it from the book your granny was reading you when you were a child. Murloc... A nasty creature that kills and eats everyone who comes to its habitat. Time to end its miserable life!"                        
+            "description": "That was a nice fight after all. Your first fight on your way to become a great hero. <br>      The sun is in its highest point. You approach the bank of a river. A nice place to take some afternoon rest and refill your water supply. You put down your belongings and get to the shallow waters. Suddenly, some ugly creature jumps in front of you from the high reeds. You recognize it from the book your granny was reading you when you were a child. Murloc... A nasty creature that kills and eats everyone who comes to its habitat. Time to end its miserable life!"                        
         },
         {
             "location_name": "Watermill",
@@ -181,7 +181,7 @@
             "monster": "Orc",
             "monster_number": "1",
             "image": "../media/3-Watermill.jpg",
-            "description": "That was a nice fight after all. Your first fight on your way to become a great hero. <br>  You try to stick to the road and after several hours of the lonely journey you notice an old watermill. As you approach you can see the signs of a recent pillage. Everything is destroyed. Dead bodies are all over the place. As you take a rusty axe from one of the dead you realize that it doesn't belong to human. It's orcish! Damned creatures! Suddenly you hear something from the building not far from you. You prepare to the fight and run inside. You have to kill at least one of them!"            
+            "description": "That was a nice fight after all. Your first fight on your way to become a great hero. <br>      You try to stick to the road and after several hours of the lonely journey you notice an old watermill. As you approach you can see the signs of a recent pillage. Everything is destroyed. Dead bodies are all over the place. As you take a rusty axe from one of the dead you realize that it doesn't belong to human. It's orcish! Damned creatures! Suddenly you hear something from the building not far from you. You prepare to the fight and run inside. You have to kill at least one of them!"            
         },
         {
             "location_name": "Lonely mountain",
@@ -190,7 +190,7 @@
             "monster": "Goblin",
             "monster_number": "1",
             "image": "../media/4-Lonely_Mountain.jpg",
-            "description": "Murlocs. At least they were shortened in numbers today. So much slime on them. How could nature create something so disgusting? <br>    You decide to go to the mountain on the south-east. Maybe you can find some safe place to rest in the evening you reach the mountain's slope. You notice a nice crag that can surely hide you from the wind. You approach it and prepare for a good sleep. <br> You sleep is disturbed by some niose. You slowly open your eyes. Ah, a goblin is trying to steal your belongings. Now it's time to teach the little bastard a lesson!"            
+            "description": "Murlocs. At least they were shortened in numbers today. So much slime on them. How could nature create something so disgusting? <br>      You decide to go to the mountain on the south-west. Maybe you can find some safe place to rest in the evening you reach the mountain's slope. You notice a nice crag that can surely hide you from the wind. You approach it and prepare for a good sleep. <br>      You sleep is disturbed by some niose. You slowly open your eyes. Ah, a goblin is trying to steal your belongings. Now it's time to teach the little bastard a lesson!"            
         },
         {
             "location_name": "Abandoned village",
@@ -199,7 +199,7 @@
             "monster": "Knight",
             "monster_number": "1",
             "image": "../media/5-Abandoned_Village.jpg",
-            "description": ""            
+            "description": "Murlocs. At least they were shortened in numbers today. So much slime on them. How could nature create something so disgusting? <br>      By taking the road to the south-east you find yourself on the way to the small village. When you approach it you understand that this village was abandoned long time ago. At the entrance of the village a knight in old rusty plate mail welcomes you. He comes closer telling you that there is a payment to go forth. By telling that he starts unsheathing his sword. Another outlaw who used to serve the king... What a letdown for a former royal footman..."            
         },
         {
             "location_name": "Cemetery",
@@ -208,7 +208,7 @@
             "monster": "Zombie",
             "monster_number": "1",
             "image": "../media/6-Cemetery.jpg",
-            "description": ""            
+            "description": "You left the watermill behind with the rage still burning in your heart. Trying to remove the leftovers of the black blood from your clothes you mezmerize the moment you pierced the heart of that filthy orc. <br>      As the day comes to its end you find yourself near the large cemetery with the old church on the far end of it. All you see to the the other side is a vast marsh. Though the place is rather creepy in the dusk you are tired and need some place to rest. But while you're considering your next step you observe a body coming out of the grave. Zombie. Why it has to be zombie?!"
         },
         {
             "location_name": "Shadowy canyon",
@@ -217,7 +217,7 @@
             "monster": "Orc",
             "monster_number": "2",
             "image": "../media/7-Shadowy_Canyon.jpg",
-            "description": ""            
+            "description": "Ater dealing with that nasty little creature you fall asleep again. This time without any interference. As the sun rises you pack your belongings and continue your journey. <br>      Walking around the mountain counter-clockwise you see old stone stairs going down the canyon. Chill covers your body. You feel that the castle is not so far. <br>  While moving through the colossal rocks you sense something and you duck to the ground. Right in time - you see an axe slicing the air right where your head was just a moment ago. With a fierce roar an orc is running towards you while holding his second axe high over his head."
         },
         {
             "location_name": "Troll cave",
@@ -226,7 +226,7 @@
             "monster": "Troll",
             "monster_number": "1",
             "image": "../media/8-Troll_Cave.jpg",
-            "description": ""            
+            "description": "Ater dealing with that nasty little creature you fall asleep again. This time without any interference. As the sun rises you pack your belongings and continue your journey. <br>      Walking around the mountain clockwise you walk down the small glade with a large cave at it. Strong smell comes from that cave. You notice some fresh blood and something that looks like a pile of bones next to the extinguished campfire. You know what that means. A troll cave. You have to get rid of that creature for the good of all people. You prepare for the fight and shout to lure the troll out of his hiding place."
         },
         {
             "location_name": "Old church",
@@ -235,7 +235,7 @@
             "monster": "Skeleton",
             "monster_number": "1",
             "image": "../media/9-Old_Church.jpg",
-            "description": ""            
+            "description": "Finally you approach an old church. There is a dim light in its windows. It's night already an you decide to get inside the church. <br>      After entering the church you see some candles alight but no one is there. As you approach the altar you see a skeleton in the robe next to it. A former priest of this church you suppose. Suddenly strong wind opens the windows and blows off the fire fro mthe candles. Creepy feeling moves along your spine. You sense some dark magic. Jesus! The skeleton now stands tall looking right into your eyes with his missing eyeballs."            
         },
         {
             "location_name": "Marsh",
@@ -244,7 +244,7 @@
             "monster": "Murloc",
             "monster_number": "3",
             "image": "../media/10-Marsh.jpg",
-            "description": ""            
+            "description": "Although the marsh doesn't look promising you move right into it. No way you stay at this cursed cemetery any longer! <br>      You keep on walking through this lifeless quagmire when suddenly fog becomes less dense. There it is! The Dark Castle is on the horizon! You start moving faster being inspired by the fact that your target is not that far. Sadly, you lost your vigilance letting a murloc to come close to you. With a awful scream 'Mrrrgll!!!' it jumps towards you."
         },
         {
             "location_name": "Main road",
@@ -253,7 +253,7 @@
             "monster": "Knight",
             "monster_number": "2",
             "image": "../media/11-Main_Road.jpg",
-            "description": ""            
+            "description": "Finally you get to an old broad road. Some years ago it served as the part of the main road to the former king's castle. A Dark Castle as it sppears now. <br>      You see an old outpost on the road that stands in your way to the castle. A knight with the kingdom tabard approach you. <br>      -By the king's name, stop! No one shall come to or out of this damned cstle! - he says. <br>      But no matter what you tell him, he refuses to let you through. You understand that the knight is under control of The Shadow. Poor soul. It's time to end his servitude."            
         },
         {
             "location_name": "Dark castle",
@@ -262,8 +262,8 @@
             "monster": "The Shadow",
             "monster_number": "1",
             "image": "../media/12-Dark_Castle.jpg",
-            "description": "",
-            "description_final": ""             
+            "description": "The Dark Castle. Even more colossal then people say. Creepy and tremendous. Your quest ends here no matter who wins the final battle. <br>      As you approach the main entrance the gates start opening. Your opponent was waiting for you. You enter the castle and start moving to the throne hall. It took you some time to find it through the dead castle but finally you enter the only room with the light inside. The princess! She's lying unconcious on tha table. And next to her stands you target. The Shadow. You feel him inside your mind, he keeps wispering that you are nothing. NO! This ends now!",
+            "description_final": "The Shadow is dead. His body vanishes along with the darkness around this place. The castle slowly purges. <br>      The princess awakens. She hugs you and keeps crying - she still can't believe that it all has ended. You take her with you end leave the fortress. The clouds are moving away and the sun comes out. <br>      After you brought back the princess back to her father, the wedding ceremony was announced. Not only you became the greatest hero but also you got the most beautiful wife in the whole kingdom. <br>      Several weeks have past since. One night you had a strange dream about The Shadow. You wake up in sweat. But.. it was only a dream. The Shadow is dead, isn't he?"
         }
     ]       
 }
