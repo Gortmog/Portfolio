@@ -17,5 +17,6 @@ and open the template in the editor.
 }
 
 #projects .col-sm-12 {
+    padding-top: 20px;
     text-align: center;
 }
