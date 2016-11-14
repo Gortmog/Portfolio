@@ -56,21 +56,29 @@ var main = function () {
     function startGame() {
         document.querySelector("#start").style.display = "none";
         document.querySelector("#intro").style.display = "block";
+        document.querySelector("#name-input").value = "Enter your name...";
+        document.querySelector("#name-input-forced").value = "Newbie";
         load();
     }
     
-    document.querySelector("input").addEventListener("focus", nameInput);
+    document.querySelector("#name-input").addEventListener("focus", function(){
+        this.value = "";
+    });
     
-    function nameInput() {
-        document.querySelector("input").value = "";
-    }
+    document.querySelector("#name-input-forced").addEventListener("focus", function(){
+        this.value = "";
+    });
+    
+   // function nameInput() {
+   //     document.querySelector("#name-input").value = "";
+   //}
     
     document.querySelector("#char-name").addEventListener("click", enterName);
     
     function enterName() {
-        if ((document.querySelector("input").value !== "") && (document.querySelector("input").value !== "Enter your name...")) {
-            char_name = document.querySelector("input").value;
-            document.querySelector("input").style.display = "none";
+        if ((document.querySelector("#name-input").value !== "") && (document.querySelector("#name-input").value !== "Enter your name...")) {
+            char_name = document.querySelector("#name-input").value;
+            document.querySelector("#name-input").style.display = "none";
             document.querySelector("#char-name").style.display = "none";
             document.querySelectorAll("#intro span")[0].innerHTML = char_name;
         }
@@ -88,14 +96,18 @@ var main = function () {
                 class_index = Math.floor(index/2);
                 spec_index = index%2;
                 if (char_name === undefined) {
-                    var forcedName = prompt("The hero like you still should have a name!", "Newbie");
-                    if (forcedName === null) {
-                        return;
-                    } else {
+                    var forcedName;
+                    $("#nameModal").modal("show");
+                    document.querySelector("#char-name-forced").addEventListener("click", function forcedNameChange(){
+                        forcedName = document.querySelector("#name-input-forced").value;
                         char_name = forcedName || "Newbie";
-                    }
+                        $("#nameModal").modal("hide");
+                        startJourney();
+                        document.querySelector("#char-name-forced").removeEventListener("click", forcedNameChange);
+                    });
+                } else {
+                    startJourney();
                 };
-                startJourney();
             };   
         })(i);
     }
@@ -463,9 +475,12 @@ var main = function () {
                 // ASK PLAYER WETHER TO STAY & SEARCH OR JUST GO ON
                 
                 if ((subject === "enemy") && (enemy.name !== "The Shadow")) {
-                    var answer = confirm("Do you want to stay for a while and search for anything useful?");
-                    if (answer == true) {
-                        var result = (Math.random() < 0.5) ? "new_enemy" : "new_potion";
+                    var result = null;
+                    $("#continueModal").modal();
+                    document.querySelector("#yes-button").addEventListener("click", function yesAnswer(){
+                        $("#continueModal").modal("hide");
+                        document.querySelector("#yes-button").removeEventListener("click", yesAnswer);
+                        result = (Math.random() < 0.5) ? "new_enemy" : "new_potion";
                         if (result === "new_enemy") {
                             document.querySelector("#log-screen").innerHTML = "";
                             var description = "While " + player.name + " is searching for anything that could prove useful, another " + enemy.name + " approaches. God damn!";
@@ -485,28 +500,36 @@ var main = function () {
                             hp_number += 1;
                             document.querySelector("#hp-number").innerHTML = hp_number;
                         }
-                    }
+                        nextJourney();
+                    });
+                    document.querySelector("#no-button").addEventListener("click", function noAnswer(){
+                        $("#continueModal").modal("hide");
+                        document.querySelector("#no-button").removeEventListener("click", noAnswer);
+                        nextJourney();
+                    });
                 }
                 
                 // PREPARE FOR THE NEXT PART OF THE JOURNEY
-                
-//                document.querySelector("#log-screen").style.overflowY = "hidden";
-                document.querySelector("#battle-buttons").style.opacity = 0;
-                if ((subject === "enemy") && (enemy.name === "The Shadow")) {
-                    next_content = "#restart-button";
-                    document.querySelector("#log-screen").innerHTML = "";
-                    document.querySelector("#log-screen").style.opacity = 1;
-                    document.querySelector("#log-screen").style.backgroundImage = "url(../media/The_End.jpg)";
-                    document.querySelector("#location-description").innerHTML = env.description_final;
-                }
-                setTimeout(function(){
-                    document.querySelector("#battle-buttons").style.display = "none";
-                    document.querySelector(next_content).style.display = "block";
+                function nextJourney(){
+    //                document.querySelector("#log-screen").style.overflowY = "hidden";
+                    document.querySelector("#battle-buttons").style.opacity = 0;
+                    if ((subject === "enemy") && (enemy.name === "The Shadow")) {
+                        next_content = "#restart-button";
+                        document.querySelector("#log-screen").innerHTML = "";
+                        document.querySelector("#log-screen").style.opacity = 1;
+                        document.querySelector("#log-screen").style.backgroundImage = "url(../media/The_End.jpg)";
+                        document.querySelector("#location-description").innerHTML = env.description_final;
+                    }
                     setTimeout(function(){
-                        document.querySelector(next_content).style.opacity = 1;
-                        
-                    }, 100);
-                }, 500);
+                        document.querySelector("#battle-buttons").style.display = "none";
+                        document.querySelector(next_content).style.display = "block";
+                        setTimeout(function(){
+                            document.querySelector(next_content).style.opacity = 1;
+
+                        }, 100);
+                    }, 500);
+                }
+                
             }, 1000);
             
             
