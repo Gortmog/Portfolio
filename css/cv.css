@@ -1,0 +1,52 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 15, 2016, 7:23:52 PM
+    Author     : NerZhul
+*/
+
+section li, p {
+    font-family: CopperplateLight, sans-serif;
+    font-size: 18px;
+}
+
+section ul {
+    list-style-type: none;
+}
+
+section .container > ul,
+#cv-info ul {
+    margin: 10px 0;
+    padding-left: 0;
+}
+
+span {
+    font-family: CopperplateBold, sans-serif;
+}
+
+#cv-info {
+    margin-top: 80px;
+}
+
+#cv-edu .container > ul > li > ul,
+#cv-prof .container > ul > li > ul > li > ul,
+#cv-skills ul {
+    list-style-type: square;
+}
+
+#cv-skills ul {
+    margin-left: 15px;
+}
+
+#cv_img img {
+    height: 300px;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+#cv-personal {
+    margin-bottom: 50px;
+}

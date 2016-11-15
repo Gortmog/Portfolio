@@ -235,6 +235,25 @@ header .nav-pills li a:hover {
     text-shadow: 2px 2px 2px #333;
 }
 
+#projects p {
+    margin-top: 30px;
+    font-family: Copperplate, sans-serif;
+    font-size: 25px;
+}
+
+#projects .btn {
+    margin-bottom: 30px;
+    font-family: Copperplate, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#projects iframe {
+    margin-bottom: 30px;
+    height: 400px;
+    width: 550px;
+}
+
 /*
     FOOTER
 */
@@ -290,6 +309,24 @@ footer #copyright {
         background-color: #fff;
         color: #000;
     }
+}
+
+@media (max-width: 1199px) {
+    
+    #projects iframe {
+        height: 350px;
+        width: 450px;
+    }
+    
+}
+
+@media (max-width: 991px) {
+    
+    #projects iframe {
+        height: 260px;
+        width: 330px;
+    }
+    
 }
 
 @media (max-width: 767px) {

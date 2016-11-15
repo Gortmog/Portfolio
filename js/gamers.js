@@ -507,6 +507,8 @@ var main = function () {
                         document.querySelector("#no-button").removeEventListener("click", noAnswer);
                         nextJourney();
                     });
+                } else {
+                    nextJourney();
                 }
                 
                 // PREPARE FOR THE NEXT PART OF THE JOURNEY
