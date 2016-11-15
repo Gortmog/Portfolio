@@ -477,37 +477,43 @@ var main = function () {
                 if ((subject === "enemy") && (enemy.name !== "The Shadow")) {
                     var result = null;
                     $("#continueModal").modal();
-                    document.querySelector("#yes-button").addEventListener("click", function yesAnswer(){
-                        $("#continueModal").modal("hide");
-                        document.querySelector("#yes-button").removeEventListener("click", yesAnswer);
-                        result = (Math.random() < 0.5) ? "new_enemy" : "new_potion";
-                        if (result === "new_enemy") {
-                            document.querySelector("#log-screen").innerHTML = "";
-                            var description = "While " + player.name + " is searching for anything that could prove useful, another " + enemy.name + " approaches. God damn!";
-                            logRecord(enemy, "continue", description);
-                            enemy_current_HP = enemy.maxHP;
-                            document.querySelector("#monster-current-hp").innerHTML = enemy_current_HP;
-                            document.querySelectorAll(".portrait")[j].src = enemy.image;
-                            document.querySelector("#attack-button").addEventListener("click", attackNow);
-                            if (hp_number > 0) {
-                                document.querySelector("#hp-button").addEventListener("click", drinkPotion);
-                            }
-                            return;
-                        } else if (result === "new_potion") {
-                            document.querySelector("#log-screen").innerHTML = "";
-                            var description = player.name + " finds an untouched healing potion. Hell yeah!";
-                            logRecord(player, "continue", description);
-                            hp_number += 1;
-                            document.querySelector("#hp-number").innerHTML = hp_number;
-                        }
-                        nextJourney();
-                    });
-                    document.querySelector("#no-button").addEventListener("click", function noAnswer(){
-                        $("#continueModal").modal("hide");
-                        document.querySelector("#no-button").removeEventListener("click", noAnswer);
-                        nextJourney();
-                    });
+                    document.querySelector("#yes-button").addEventListener("click", yesAnswer);
+                    document.querySelector("#no-button").addEventListener("click", noAnswer);
                 } else {
+                    nextJourney();
+                }
+                
+                function yesAnswer(){
+                    $("#continueModal").modal("hide");
+                    document.querySelector("#yes-button").removeEventListener("click", yesAnswer);
+                    document.querySelector("#no-button").removeEventListener("click", noAnswer);
+                    result = (Math.random() < 0.5) ? "new_enemy" : "new_potion";
+                    if (result === "new_enemy") {
+                        document.querySelector("#log-screen").innerHTML = "";
+                        var description = "While " + player.name + " is searching for anything that could prove useful, another " + enemy.name + " approaches. God damn!";
+                        logRecord(enemy, "continue", description);
+                        enemy_current_HP = enemy.maxHP;
+                        document.querySelector("#monster-current-hp").innerHTML = enemy_current_HP;
+                        document.querySelectorAll(".portrait")[j].src = enemy.image;
+                        document.querySelector("#attack-button").addEventListener("click", attackNow);
+                        if (hp_number > 0) {
+                            document.querySelector("#hp-button").addEventListener("click", drinkPotion);
+                        }
+                        return;
+                    } else if (result === "new_potion") {
+                        document.querySelector("#log-screen").innerHTML = "";
+                        var description = player.name + " finds an untouched healing potion. Hell yeah!";
+                        logRecord(player, "continue", description);
+                        hp_number += 1;
+                        document.querySelector("#hp-number").innerHTML = hp_number;
+                    }
+                    nextJourney();
+                }
+                
+                function noAnswer(){
+                    $("#continueModal").modal("hide");
+                    document.querySelector("#yes-button").removeEventListener("click", yesAnswer);
+                    document.querySelector("#no-button").removeEventListener("click", noAnswer);
                     nextJourney();
                 }
                 
@@ -561,6 +567,7 @@ var main = function () {
         setTimeout(function(){
             document.querySelector("#log-screen").style.display = "none";
             document.querySelector("#log-screen").innerHTML = "";
+            document.querySelector("#log-screen").style.backgroundImage = "none";
             document.querySelector(".battle-buttons").style.display = "none";
             document.querySelector(".battle-buttons").style.opacity = 0;
             document.querySelector("#next-buttons").style.display = "none";
